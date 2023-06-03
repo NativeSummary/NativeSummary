@@ -1,0 +1,15 @@
+/bin/
+build/
+dist/
+.gradle
+.classpath
+.project
+.DS_Store
+.settings/
+.vscode/
+.idea/
+ghidra_test/
+gradle.properties
+.editorconfig
+/src/integration/resources/binaries
+/out/

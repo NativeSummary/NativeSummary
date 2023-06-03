@@ -1,0 +1,2 @@
+<org.example.NativeSummaryFuncs: int GetArrayLength(java.lang.Object,byte[])> -> _SINK_
+<org.example.NativeSummaryFuncs: java.lang.String GetByteArrayElements(java.lang.Object,byte[],java.lang.Object)> -> _SINK_

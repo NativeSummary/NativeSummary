@@ -1,0 +1,3 @@
+[submodule "src/main/java/org/example/nativesummary/ir"]
+	path = src/main/java/org/example/nativesummary/ir
+	url = git@github.com:NativeSummary/NativeSummaryIR.git

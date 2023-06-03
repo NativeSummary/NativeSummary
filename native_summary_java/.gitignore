@@ -1,0 +1,4 @@
+target/
+iccProvider/
+apk-test/
+dependency-reduced-pom.xml

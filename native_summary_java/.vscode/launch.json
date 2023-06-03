@@ -1,0 +1,66 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch JNSAFSSConverter",
+            "request": "launch",
+            "mainClass": "org.example.nativesummary.JNSAFSSConverter",
+            "projectName": "native_summary"
+        },
+        {
+            "type": "java",
+            "name": "SinksGenerator",
+            "request": "launch",
+            "mainClass": "org.example.nativesummary.SinksGenerator",
+            "cwd": "${workspaceFolder}",
+            "args": "F:\\native_summary\\nativesummary_repacked_apks\\native_copy-release-unsigned.apk"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "org.example.nativesummary.App",
+            "projectName": "native_summary"
+        },
+        {
+            "type": "java",
+            "name": "bulk malradar",
+            "request": "launch",
+            "mainClass": "org.example.nativesummary.APKRepacker",
+            "cwd": "F:\\native_summary",
+            "vmArgs": "-ea",
+            "args": "F:\\native_summary\\malradar F:\\native_summary\\malradar-preana C:\\Users\\DELL\\AppData\\Local\\Android\\Sdk\\platforms --no-null-in-phi --debug-type --debug-jimple"
+        },
+        {
+            "type": "java",
+            "name": "bulk NBFE",
+            "request": "launch",
+            "mainClass": "org.example.nativesummary.APKRepacker",
+            "cwd": "F:\\native_summary",
+            "vmArgs": "-ea",
+            "args": "F:\\native_summary\\NativeFlowBenchExtended\\apks F:\\native_summary\\NFBE-pre C:\\Users\\DELL\\AppData\\Local\\Android\\Sdk\\platforms --no-null-in-phi --debug-type --debug-jimple"
+        },
+        {
+            "type": "java",
+            "name": "NBFE native_handle",
+            "request": "launch",
+            "mainClass": "org.example.nativesummary.APKRepacker",
+            "cwd": "F:\\native_summary",
+            "vmArgs": "-ea",
+            "args": "F:\\native_summary\\NativeFlowBenchExtended\\apks\\native_handle-release-unsigned.apk F:\\native_summary\\NFBE-pre\\native_handle-release-unsigned.native_summary C:\\Users\\DELL\\AppData\\Local\\Android\\Sdk\\platforms --no-null-in-phi --debug-type --debug-jimple"
+        },
+        {
+            "type": "java",
+            "name": "debug",
+            "request": "launch",
+            "mainClass": "org.example.nativesummary.APKRepacker",
+            "cwd": "/home/user/ns/dev/NativeSummary/native_summary_java/",
+            "vmArgs": "-ea",
+            "args": "/home/user/ns/dataset/nfbe/native_array_elements-release-unsigned.apk /home/user/ns/experiment/baseline-native_summary/nfbe-results/native_array_elements-release-unsigned.apk /home/user/ns/dev/NativeSummary/platforms --no-null-in-phi --debug-type --debug-jimple"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="GUI" type="Application" factoryName="Application">
+    <option name="ALTERNATIVE_JRE_PATH" value="13" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <classpathModifications>
+      <entry path="C:\Users\DELL\my_programs\ghidra_10.1.2_PUBLIC\Ghidra\Framework\Utility\lib\Utility.jar" />
+    </classpathModifications>
+    <option name="MAIN_CLASS_NAME" value="ghidra.Ghidra" />
+    <option name="PROGRAM_PARAMETERS" value="ghidra.GhidraRun" />
+    <option name="VM_PARAMETERS" value="-Duser.home=&quot;C:\Users\DELL&quot; -Djava.system.class.loader=ghidra.GhidraClassLoader -Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.variant= -Dsun.java2d.opengl=false -Djdk.tls.client.protocols=TLSv1.2,TLSv1.3 -Dcpu.core.limit= -Dcpu.core.override= -Dfont.size.override= -Dpython.console.encoding=UTF-8 -Xshare:off --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.desktop/sun.awt.image=ALL-UNNAMED -Dsun.java2d.d3d=false -Dlog4j.skipJansi=true" />
+    <method v="2">
+      <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_Autoinstall" />
+    </method>
+  </configuration>
+</component>

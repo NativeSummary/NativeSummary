@@ -1,0 +1,250 @@
+diff --git a/angr/analyses/vfg.py b/angr/analyses/vfg.py
+index 26f0ad841..0740f4b71 100644
+--- a/angr/analyses/vfg.py
++++ b/angr/analyses/vfg.py
+@@ -20,7 +20,7 @@ from ..procedures import SIM_PROCEDURES
+ from ..state_plugins.callstack import CallStack
+ 
+ l = logging.getLogger(name=__name__)
+-
++# l.setLevel(logging.DEBUG)
+ 
+ class VFGJob(CFGJobBase):
+     """
+@@ -270,7 +270,8 @@ class VFG(ForwardAnalysis, Analysis):   # pylint:disable=abstract-method
+                  widening_interval=3,
+                  final_state_callback=None,
+                  status_callback=None,
+-                 record_function_final_states=False
++                 record_function_final_states=False,
++                 interfunction_hook=None
+                  ):
+         """
+         :param cfg: The control-flow graph to base this analysis on. If none is provided, we will
+@@ -290,6 +291,7 @@ class VFG(ForwardAnalysis, Analysis):   # pylint:disable=abstract-method
+                                  status_callback=status_callback
+                                  )
+ 
++        self.interfunction_hook = interfunction_hook
+         # Related CFG.
+         # We can still perform analysis if you don't specify a CFG. But providing a CFG may give you better result.
+         self._cfg = cfg
+@@ -718,7 +720,10 @@ class VFG(ForwardAnalysis, Analysis):   # pylint:disable=abstract-method
+         # is artificial) into the CFG. The exits will be Ijk_Call and
+         # Ijk_FakeRet, and Ijk_Call always goes first
+         job.is_call_jump = any([self._is_call_jumpkind(i.history.jumpkind) for i in all_successors])
+-        call_targets = [i.solver.eval_one(i.ip) for i in all_successors if self._is_call_jumpkind(i.history.jumpkind)]
++        try:
++            call_targets = [i.solver.eval_one(i.ip) for i in all_successors if self._is_call_jumpkind(i.history.jumpkind)]
++        except SimValueError as e:
++            call_targets = None
+         job.call_target = None if not call_targets else call_targets[0]
+ 
+         job.is_return_jump = len(all_successors) and all_successors[0].history.jumpkind == 'Ijk_Ret'
+@@ -792,7 +797,7 @@ class VFG(ForwardAnalysis, Analysis):   # pylint:disable=abstract-method
+             # If the function we're calling into doesn't return, we should discard it
+             if self._cfg is not None:
+                 func = self.kb.functions.function(addr=job.call_target)
+-                if func is not None and func.returning is False and len(all_successors) == 2:
++                if func is not None and func.returning is False and len(all_successors) == 2 and not func.is_plt:
+                     del all_successors[-1]
+                     fakeret_successor = None
+ 
+@@ -809,8 +814,12 @@ class VFG(ForwardAnalysis, Analysis):   # pylint:disable=abstract-method
+             # Save the initial state for the function
+             self._save_function_initial_state(new_function_key, successor_addr, successor.copy())
+ 
++            is_skip = False
++            if self.interfunction_hook is not None:
++                is_skip = self.interfunction_hook(self, job, successor, all_successors[-1])
++
+             # bail out if we hit the interfunction_level cap
+-            if len(job.call_stack) >= self._interfunction_level:
++            if len(job.call_stack) >= self._interfunction_level or is_skip:
+                 l.debug('We are not tracing into a new function %#08x as we hit interfunction_level limit', successor_addr)
+ 
+                 # mark it as skipped
+@@ -887,7 +896,7 @@ class VFG(ForwardAnalysis, Analysis):   # pylint:disable=abstract-method
+ 
+         # Currently we assume a legit jumping target cannot have more than 256 concrete values
+         # TODO: make it a setting on VFG
+-        MAX_NUMBER_OF_CONCRETE_VALUES = 256
++        MAX_NUMBER_OF_CONCRETE_VALUES = 20
+ 
+         all_possible_ips = successor.solver.eval_upto(successor.ip, MAX_NUMBER_OF_CONCRETE_VALUES + 1)
+ 
+@@ -1212,7 +1221,7 @@ class VFG(ForwardAnalysis, Analysis):   # pylint:disable=abstract-method
+ 
+         if self.project.arch.name in ('X86', 'AMD64'):
+             state.stack_push(ret_bvv)
+-        elif is_arm_arch(self.project.arch):
++        elif is_arm_arch(self.project.arch) or self.project.arch.name.startswith("AARCH"):
+             state.regs.lr = ret_bvv
+         elif self.project.arch.name in ('MIPS32', 'MIPS64'):
+             state.regs.ra = ret_bvv
+@@ -1581,7 +1590,8 @@ class VFG(ForwardAnalysis, Analysis):   # pylint:disable=abstract-method
+ 
+         func = self.project.loader.find_symbol(job.addr)
+         function_name = func.name if func is not None else None
+-        module_name = self.project.loader.find_object_containing(job.addr).provides
++        module = self.project.loader.find_object_containing(job.addr)
++        module_name = module.provides if module is not None else None
+ 
+         l.debug("VFGJob @ %#08x with callstack [ %s ]", job.addr,
+                 job.callstack_repr(self.kb),
+diff --git a/angr/analyses/vsa_ddg.py b/angr/analyses/vsa_ddg.py
+index a47d9b9d5..db8a91bdb 100644
+--- a/angr/analyses/vsa_ddg.py
++++ b/angr/analyses/vsa_ddg.py
+@@ -120,7 +120,7 @@ class VSA_DDG(Analysis):
+         worklist_set = set(worklist)
+ 
+         # A dict storing defs set
+-        # variable -> locations
++        # node -> (variable -> locations)
+         live_defs_per_node = { }
+ 
+         while worklist:
+@@ -253,7 +253,10 @@ class VSA_DDG(Analysis):
+             if a.type == "mem":
+                 if a.actual_addrs is None:
+                     # For now, mem reads don't necessarily have actual_addrs set properly
+-                    addr_list = set(aw.to_valueset(state) for aw in state.memory._concretize_address_descriptor(a.addr.ast))
++                    addr_desc = state.memory._normalize_address(a.addr.ast)
++                    if addr_desc.cardinality > 0x50:
++                        l.warning("memory read too many possible target.")
++                    addr_list = set(aw.to_valueset(state) for aw in state.memory._concretize_address_descriptor(addr_desc, a.addr.ast))
+                 else:
+                     addr_list = set(a.actual_addrs)
+ 
+diff --git a/angr/engines/successors.py b/angr/engines/successors.py
+index b39681d8d..b96ecfc1f 100644
+--- a/angr/engines/successors.py
++++ b/angr/engines/successors.py
+@@ -86,7 +86,7 @@ class SimSuccessors:
+     def __iter__(self):
+         return iter(self.flat_successors)
+ 
+-    def add_successor(self, state, target, guard, jumpkind, add_guard=True, exit_stmt_idx=None, exit_ins_addr=None,
++    def add_successor(self, state, target, guard, jumpkind, add_guard=False, exit_stmt_idx=None, exit_ins_addr=None,
+                       source=None):
+         """
+         Add a successor state of the SimRun.
+diff --git a/angr/misc/autoimport.py b/angr/misc/autoimport.py
+index 1d5f4c36e..68f0931c9 100644
+--- a/angr/misc/autoimport.py
++++ b/angr/misc/autoimport.py
+@@ -21,8 +21,9 @@ def auto_import_packages(base_module, base_path, ignore_dirs=(), ignore_files=()
+ 
+         try:
+             package = importlib.import_module(".%s" % lib_module_name, base_module)
+-        except ImportError:
++        except ImportError as e:
+             l.warning("Unable to autoimport package %s.%s", base_module, lib_module_name, exc_info=True)
++            raise e
+         else:
+             if scan_modules:
+                 for name, mod in auto_import_modules('%s.%s' % (base_module, lib_module_name), lib_path, ignore_files=ignore_files):
+diff --git a/angr/sim_state.py b/angr/sim_state.py
+index 0d355972f..dae0e6a5c 100644
+--- a/angr/sim_state.py
++++ b/angr/sim_state.py
+@@ -225,6 +225,9 @@ class SimState(PluginHub):
+             elif o.FAST_REGISTERS in self.options:
+                 sim_registers_cls = self.plugin_preset.request_plugin('fast_memory')
+                 sim_registers = sim_registers_cls(memory_id="reg", endness=register_endness)
++            elif o.ABSTRACT_MEMORY in self.options:
++                sim_registers_cls = self.plugin_preset.request_plugin('abs_memory')
++                sim_registers = sim_registers_cls(memory_id='reg', endness=register_endness, regioned_memory_cls=regioned_memory_cls)
+             else:
+                 sim_registers_cls = self.plugin_preset.request_plugin('sym_memory')
+                 sim_registers = sim_registers_cls(memory_id="reg", endness=register_endness)
+diff --git a/angr/storage/memory_mixins/paged_memory/pages/ultra_page.py b/angr/storage/memory_mixins/paged_memory/pages/ultra_page.py
+index 2326732d7..a210670f6 100644
+--- a/angr/storage/memory_mixins/paged_memory/pages/ultra_page.py
++++ b/angr/storage/memory_mixins/paged_memory/pages/ultra_page.py
+@@ -189,7 +189,7 @@ class UltraPage(MemoryObjectMixin, PageBase):
+             l.debug("... on byte 0x%x", b)
+ 
+             memory_objects: List[Tuple[SimMemoryObject,Any]] = []
+-            concretes: List[Tuple[int,Any]] = []
++            concretes: List[Tuple[int,Any,Any]] = []
+             unconstrained_in: List[Tuple['UltraPage',Any]] = []
+             our_mo: Optional[SimMemoryObject] = None
+ 
+@@ -208,17 +208,25 @@ class UltraPage(MemoryObjectMixin, PageBase):
+                         unconstrained_in.append((pg, fv))
+                 else:
+                     # concrete data
+-                    concretes.append((pg.concrete_data[b], fv))
++                    concretes.append((pg.concrete_data[b], fv, pg))
+ 
+             # fast path: no memory objects, no unconstrained positions, and only one concrete value
+-            if not memory_objects and not unconstrained_in and len(set(cv for cv, _ in concretes)) == 1:
++            if not memory_objects and not unconstrained_in and len(set(cv for cv, _, _ in concretes)) == 1:
+                 cv = concretes[0][0]
+                 self.store(b, cv, size=1, cooperate=True, page_addr=page_addr)
+                 continue
+ 
+             # convert all concrete values into memory objects
+-            for cv, fv in concretes:
+-                mo = SimMemoryObject(claripy.BVV(cv, size=8), page_addr + b, 'Iend_LE')
++            for cv, fv, pg in concretes:
++                # 直到symbolic，或者到了arch.bytes，（或者直到不一样？还是算了）
++                the_size = 1
++                for i in range(memory.state.arch.bytes):
++                    if pg.symbolic_bitmap[b + i]: # not concrete
++                        break
++                    the_size = i + 1
++                # 从byte_array到BVV，可以直接传bytes，内部好像是按照大端序。
++                val = int.from_bytes(pg.concrete_data[b:b+the_size], 'little')
++                mo = SimMemoryObject(claripy.BVV(val, size=the_size*8), page_addr + b, 'Iend_LE')
+                 memory_objects.append((mo, fv))
+ 
+             mos = set(mo for mo, _ in memory_objects)
+@@ -268,7 +276,7 @@ class UltraPage(MemoryObjectMixin, PageBase):
+                 # Now, we have the minimum size. We'll extract/create expressions of that
+                 # size and merge them
+                 extracted = [
+-                    (mo.bytes_at(page_addr + b, min_size), fv) for
++                    (mo.bytes_at(page_addr + b, min_size, endness=mo.endness), fv) for
+                     mo, fv in memory_objects
+                 ] if min_size != 0 else []
+                 created = [
+diff --git a/angr/storage/memory_mixins/regioned_memory/abstract_merger_mixin.py b/angr/storage/memory_mixins/regioned_memory/abstract_merger_mixin.py
+index e09949444..7b24ae6cb 100644
+--- a/angr/storage/memory_mixins/regioned_memory/abstract_merger_mixin.py
++++ b/angr/storage/memory_mixins/regioned_memory/abstract_merger_mixin.py
+@@ -4,7 +4,7 @@ from typing import Iterable, Tuple, Any
+ from .. import MemoryMixin
+ 
+ l = logging.getLogger(name=__name__)
+-
++# l.setLevel(logging.INFO)
+ 
+ class AbstractMergerMixin(MemoryMixin):
+ 
+@@ -34,7 +34,22 @@ class AbstractMergerMixin(MemoryMixin):
+         # if should_reverse:
+         #     merged_val = merged_val.reversed
+ 
+-        if not values[0][0].uninitialized and self.state.solver.backends.vsa.identical(merged_val, values[0][0]):
++        def has_bvs(arg):
++            for leaf in arg.leaf_asts():
++                if leaf.op == 'BVS':
++                    return True
++            return False
++
++        try:
++            identical = self.state.solver.backends.vsa.identical(merged_val, values[0][0])
++        except TypeError:
++            identical = False
++
++        if not values[0][0].uninitialized and identical:
++            if has_bvs(merged_val) or has_bvs(values[0][0]):
++                l.info("Identical, but has BVS...")
++                return merged_val
++            l.info("Identical, not merging...")
+             return None
+ 
+         return merged_val
