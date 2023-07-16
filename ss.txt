@@ -1,0 +1,1337 @@
+
+<java.lang.ProcessBuilder: java.lang.Process start()> -> _SINK_
+
+
+
+
+<org.apache.http.message.BasicNameValuePair: void <init>(java.lang.String,java.lang.String)> -> _SINK_
+
+% add Activity.getIntent() as source instead of the next methods to avoid duplicate results.
+
+
+%bundle sources
+
+%bundle sinks
+<android.os.Bundle: void putBinder(java.lang.String,android.os.IBinder)> -> _SINK_
+<android.os.Bundle: void putBoolean(java.lang.String,boolean)> -> _SINK_
+<android.os.Bundle: void putBooleanArray(java.lang.String,boolean[])> -> _SINK_
+<android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)> -> _SINK_
+<android.os.Bundle: void putByte(java.lang.String,byte)> -> _SINK_
+<android.os.Bundle: void putByteArray(java.lang.String,byte[])> -> _SINK_
+<android.os.Bundle: void putChar(java.lang.String,char)> -> _SINK_
+<android.os.Bundle: void putCharArray(java.lang.String,char[])> -> _SINK_
+<android.os.Bundle: void putCharSequence(java.lang.String,java.lang.CharSequence)> -> _SINK_
+<android.os.Bundle: void putCharSequenceArray(java.lang.String,java.lang.CharSequence[])> -> _SINK_
+<android.os.Bundle: void putCharSequenceArrayList(java.lang.String,java.util.ArrayList)> -> _SINK_
+<android.os.Bundle: void putDouble(java.lang.String,double)> -> _SINK_
+<android.os.Bundle: void putDoubleArray(java.lang.String,double[])> -> _SINK_
+<android.os.Bundle: void putFloat(java.lang.String,float)> -> _SINK_
+<android.os.Bundle: void putFloatArray(java.lang.String,float[])> -> _SINK_
+<android.os.Bundle: void putInt(java.lang.String,int)> -> _SINK_
+<android.os.Bundle: void putIntArray(java.lang.String,int[])> -> _SINK_
+<android.os.Bundle: void putIntegerArrayList(java.lang.String,java.util.ArrayList)> -> _SINK_
+<android.os.Bundle: void putLong(java.lang.String,long)> -> _SINK_
+<android.os.Bundle: void putLongArray(java.lang.String,long[])> -> _SINK_
+<android.os.Bundle: void putParcelable(java.lang.String,android.os.Parcelable)> -> _SINK_
+<android.os.Bundle: void putParcelableArray(java.lang.String,android.os.Parcelable[])> -> _SINK_
+<android.os.Bundle: void putParcelableArrayList(java.lang.String,java.util.ArrayList)> -> _SINK_
+<android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)> -> _SINK_
+<android.os.Bundle: void putShort(java.lang.String,short)> -> _SINK_
+<android.os.Bundle: void putShortArray(java.lang.String,short[])> -> _SINK_
+<android.os.Bundle: void putSparseParcelableArray(java.lang.String,android.util.SparseArray)> -> _SINK_
+<android.os.Bundle: void putString(java.lang.String,java.lang.String)> -> _SINK_
+<android.os.Bundle: void putStringArray(java.lang.String,java.lang.String[])> -> _SINK_
+<android.os.Bundle: void putStringArrayList(java.lang.String,java.util.ArrayList)> -> _SINK_
+<android.os.Bundle: void putAll(android.os.Bundle)> -> _SINK_
+
+
+
+<android.util.Log: int d(java.lang.String,java.lang.String)> -> _SINK_
+<android.util.Log: int d(java.lang.String,java.lang.String,java.lang.Throwable)> -> _SINK_
+<android.util.Log: int e(java.lang.String,java.lang.String)> -> _SINK_
+<android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)> -> _SINK_
+<android.util.Log: int i(java.lang.String,java.lang.String)> -> _SINK_
+<android.util.Log: int i(java.lang.String,java.lang.String,java.lang.Throwable)> -> _SINK_
+<android.util.Log: int v(java.lang.String,java.lang.String)> -> _SINK_
+<android.util.Log: int v(java.lang.String,java.lang.String,java.lang.Throwable)> -> _SINK_
+<android.util.Log: int w(java.lang.String,java.lang.Throwable)> -> _SINK_
+<android.util.Log: int w(java.lang.String,java.lang.String)> -> _SINK_
+<android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)> -> _SINK_
+<android.util.Log: int wtf(java.lang.String,java.lang.Throwable)> -> _SINK_
+<android.util.Log: int wtf(java.lang.String,java.lang.String)> -> _SINK_
+<android.util.Log: int wtf(java.lang.String,java.lang.String,java.lang.Throwable)> -> _SINK_
+
+<java.io.OutputStream: void write(byte[])> -> _SINK_
+<java.io.OutputStream: void write(byte[],int,int)> -> _SINK_
+<java.io.OutputStream: void write(int)> -> _SINK_
+
+<java.io.FileOutputStream: void write(byte[])> -> _SINK_
+<java.io.FileOutputStream: void write(byte[],int,int)> -> _SINK_
+<java.io.FileOutputStream: void write(int)> -> _SINK_
+
+<java.io.Writer: void write(char[])> -> _SINK_
+<java.io.Writer: void write(char[],int,int)> -> _SINK_
+<java.io.Writer: void write(int)> -> _SINK_
+<java.io.Writer: void write(java.lang.String)> -> _SINK_
+<java.io.Writer: void write(java.lang.String,int,int)> -> _SINK_
+<java.io.Writer: java.io.Writer append(java.lang.CharSequence)> -> _SINK_
+
+<java.io.OutputStreamWriter: java.io.Writer append(java.lang.CharSequence)> -> _SINK_
+
+<java.net.URL: void set(java.lang.String,java.lang.String,int,java.lang.String,java.lang.String)> -> _SINK_
+<java.net.URL: void set(java.lang.String,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)> -> _SINK_
+
+<java.net.URLConnection: void setRequestProperty(java.lang.String,java.lang.String)> -> _SINK_
+<android.content.Intent: android.content.Intent setAction(java.lang.String)> -> _SINK_
+<android.content.Intent: android.content.Intent setClassName(android.content.Context,java.lang.Class)> -> _SINK_
+<android.content.Intent: android.content.Intent setClassName(android.content.Context,java.lang.String)> -> _SINK_
+<android.content.Intent: android.content.Intent setComponent(android.content.ComponentName)> -> _SINK_
+
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,double[])> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,int)> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.CharSequence)> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,char)> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,android.os.Bundle)> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,android.os.Parcelable[])> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,java.io.Serializable)> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,int[])> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,float)> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,byte[])> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,long[])> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,android.os.Parcelable)> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,float[])> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,long)> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String[])> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean[])> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,short)> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,double)> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,short[])> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,byte)> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,char[])> -> _SINK_
+%<android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.CharSequence[])> -> _SINK_
+
+<android.content.Context: void sendBroadcast(android.content.Intent)> -> _SINK_
+<android.content.Context: void sendBroadcast(android.content.Intent,java.lang.String)> -> _SINK_
+<android.content.Context: void sendOrderedBroadcast(android.content.Intent,java.lang.String)> -> _SINK_
+
+<android.content.ContextWrapper: void sendOrderedBroadcast(android.content.Intent,java.lang.String)> -> _SINK_
+
+<android.media.MediaRecorder: void setVideoSource(int)> -> _SINK_
+<android.media.MediaRecorder: void setPreviewDisplay(android.view.Surface)> -> _SINK_
+<android.media.MediaRecorder: void start()> -> _SINK_
+
+<android.content.Context: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)> -> _SINK_
+<android.content.Context: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter,java.lang.String,android.os.Handler)> -> _SINK_
+
+<android.content.IntentFilter: void addAction(java.lang.String)> -> _SINK_
+<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)> -> _SINK_ 
+<android.telephony.SmsManager: void sendDataMessage(java.lang.String,java.lang.String,short,byte[],android.app.PendingIntent,android.app.PendingIntent)> -> _SINK_ 
+<android.telephony.SmsManager: void sendMultipartTextMessage(java.lang.String,java.lang.String,java.util.ArrayList,java.util.ArrayList,java.util.ArrayList)> -> _SINK_ 
+<java.net.Socket: void connect(java.net.SocketAddress)> -> _SINK_
+<android.os.Handler: boolean sendMessage(android.os.Message)> -> _SINK_
+
+<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)> -> _SINK_
+<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putFloat(java.lang.String,float)> -> _SINK_
+<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putInt(java.lang.String,int)> -> _SINK_
+<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putLong(java.lang.String,long)> -> _SINK_
+<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)> -> _SINK_
+
+<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)> -> _SINK_
+<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putFloat(java.lang.String,float)> -> _SINK_
+<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putInt(java.lang.String,int)> -> _SINK_
+<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putLong(java.lang.String,long)> -> _SINK_
+<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)> -> _SINK_
+
+
+
+
+<org.apache.http.impl.client.DefaultHttpClient: org.apache.http.HttpResponse execute(org.apache.http.client.methods.HttpUriRequest)> -> _SINK_
+<org.apache.http.client.HttpClient: org.apache.http.HttpResponse execute(org.apache.http.client.methods.HttpUriRequest)> -> _SINK_
+
+
+<java.net.URL: void <init>(java.lang.String,java.lang.String,int,java.lang.String)> -> _SINK_
+<java.net.URL: void <init>(java.lang.String,java.lang.String,java.lang.String)> -> _SINK_
+<java.net.URL: void <init>(java.lang.String,java.lang.String,int,java.lang.String,java.net.URLStreamHandler)> -> _SINK_
+<java.net.URL: void <init>(java.lang.String)> -> _SINK_
+<java.net.URL: void <init>(java.net.URL,java.lang.String)> -> _SINK_
+<java.net.URL: void <init>(java.net.URL,java.lang.String,java.net.URLStreamHandler)> -> _SINK_
+
+<android.content.Context: void startActivity(android.content.Intent)> -> _SINK_
+<android.content.ContextWrapper: void startActivity(android.content.Intent)> -> _SINK_
+<android.content.Context: void startActivity(android.content.Intent,android.os.Bundle)> -> _SINK_
+<android.content.Context: void startActivities(android.content.Intent[])> -> _SINK_
+<android.content.Context: void startActivities(android.content.Intent[],android.os.Bundle)> -> _SINK_
+<android.content.Context: android.content.ComponentName startService(android.content.Intent)> -> _SINK_
+<android.content.Context: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)> -> _SINK_
+<android.content.Context: void sendBroadcast(android.content.Intent)> -> _SINK_
+<android.content.Context: void sendBroadcast(android.content.Intent,java.lang.String)> -> _SINK_
+
+
+<android.app.Activity: void setResult(int,android.content.Intent)> -> _SINK_
+
+% Do not enter this method as a source. Our callback parameter handling will take care
+% of the parameters of this method anyway. Adding this method taints the whole activity!
+
+<android.app.Activity: void startActivity(android.content.Intent)> -> _SINK_
+<android.app.Activity: void startActivity(android.content.Intent,android.os.Bundle)> -> _SINK_
+<android.app.Activity: void startActivities(android.content.Intent[])> -> _SINK_
+<android.app.Activity: void startActivities(android.content.Intent[],android.os.Bundle)> -> _SINK_
+<android.app.Activity: void startActivityForResult(android.content.Intent,int)> -> _SINK_
+<android.app.Activity: void startActivityForResult(android.content.Intent,int,android.os.Bundle)> -> _SINK_
+<android.app.Activity: void startActivityFromChild(android.app.Activity,android.content.Intent,int,android.os.Bundle)> -> _SINK_
+<android.app.Activity: void startActivityFromChild(android.app.Activity,android.content.Intent,int)> -> _SINK_
+<android.app.Activity: void startActivityFromFragment(android.app.Fragment,android.content.Intent,int,android.os.Bundle)> -> _SINK_
+<android.app.Activity: void startActivityFromFragment(android.app.Fragment,android.content.Intent,int)> -> _SINK_
+<android.app.Activity: void startActivityIfNeeded(android.content.Intent,int,android.os.Bundle)> -> _SINK_
+<android.app.Activity: void startActivityIfNeeded(android.content.Intent,int)> -> _SINK_
+<android.app.Activity: android.content.ComponentName startService(android.content.Intent)> -> _SINK_
+<android.app.Activity: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)> -> _SINK_
+<android.app.Activity: void sendBroadcast(android.content.Intent)> -> _SINK_
+<android.app.Activity: void sendBroadcast(android.content.Intent,java.lang.String)> -> _SINK_
+<android.app.Activity: void sendBroadcastAsUser(android.content.Intent,android.os.UserHandle)> -> _SINK_
+<android.app.Activity: void sendBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String)> -> _SINK_
+<android.app.Activity: void sendOrderedBroadcast(android.content.Intent,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)> -> _SINK_
+<android.app.Activity: void sendOrderedBroadcast(android.content.Intent,java.lang.String)> -> _SINK_
+<android.app.Activity: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)> -> _SINK_
+<android.app.Activity: void sendStickyBroadcast(android.content.Intent)> -> _SINK_
+<android.app.Activity: void sendStickyBroadcastAsUser(android.content.Intent,android.os.UserHandle)> -> _SINK_
+<android.app.Activity: void sendStickyOrderedBroadcast(android.content.Intent,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)> -> _SINK_
+<android.app.Activity: void sendStickyOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)> -> _SINK_
+
+<android.content.ContentResolver: android.net.Uri insert(android.net.Uri,android.content.ContentValues)> -> _SINK_
+<android.content.ContentResolver: int delete(android.net.Uri,java.lang.String,java.lang.String[])> -> _SINK_
+<android.content.ContentResolver: int update(android.net.Uri,android.content.ContentValues,java.lang.String,java.lang.String[])> -> _SINK_
+<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)> -> _SINK_
+<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,android.os.CancellationSignal)> -> _SINK_
+
+
+
+
+<android.os.Handler: android.os.Message obtainMessage()> -> _SOURCE_
+<android.os.Handler: android.os.Message obtainMessage(int,int,int)> -> _SOURCE_
+<android.os.Handler: android.os.Message obtainMessage(int,int,int,java.lang.Object)> -> _SOURCE_
+<android.os.Handler: android.os.Message obtainMessage(int)> -> _SOURCE_
+<android.os.Handler: android.os.Message obtainMessage(int,java.lang.Object)> -> _SOURCE_
+
+<java.util.Locale: java.lang.String getCountry()> -> _SOURCE_
+<android.telephony.gsm.GsmCellLocation: int getCid()> -> _SOURCE_
+<android.telephony.gsm.GsmCellLocation: int getLac()> -> _SOURCE_
+<android.accounts.AccountManager: android.accounts.Account[] getAccounts()> -> _SOURCE_
+<java.util.Calendar: java.util.TimeZone getTimeZone()> -> _SOURCE_
+<android.provider.Browser: android.database.Cursor getAllBookmarks()> -> _SOURCE_
+<android.provider.Browser: android.database.Cursor getAllVisitedUrls()> -> _SOURCE_
+
+
+<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)> -> _SOURCE_
+<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,android.os.CancellationSignal)> -> _SOURCE_
+
+
+<android.app.Activity: android.content.Intent getIntent()> -> _SOURCE_
+
+
+% <android.app.Activity: android.view.View findViewById(int)> -> _SOURCE_
+<android.database.Cursor: java.lang.String getString(int)> -> _SOURCE_
+<android.database.sqlite.SQLiteDatabase: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)> -> _SOURCE_
+<android.database.sqlite.SQLiteDatabase: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,android.os.CancellationSignal)> -> _SOURCE_
+
+
+% SharedPreferences
+<android.content.SharedPreferences: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)> -> _SOURCE_
+
+<com.android.contacts.test.InjectedServices: android.content.SharedPreferences getSharedPreferences()> -> _SOURCE_
+<android.app.SharedPreferencesImpl: java.util.Set getStringSet(java.lang.String,java.util.Set)> -> _SOURCE_
+<com.android.camera.CameraPreference: android.content.SharedPreferences getSharedPreferences()> -> _SOURCE_
+<android.app.SharedPreferencesImpl: int getInt(java.lang.String,int)> -> _SOURCE_
+<com.android.deskclock.timer.TimerFragment: com.android.deskclock.timer.TimerFragment$TimersListAdapter createAdapter(android.content.Context,android.content.SharedPreferences)> -> _SOURCE_
+<com.android.inputmethod.latin.UserHistoryDictionary: com.android.inputmethod.latin.UserHistoryDictionary getInstance(android.content.Context,java.lang.String,android.content.SharedPreferences)> -> _SOURCE_
+<com.android.phone.sip.SipSharedPreferences: java.lang.String getSipCallOption()> -> _SOURCE_
+<com.android.launcher2.LauncherApplication: java.lang.String getSharedPreferencesKey()> -> _SOURCE_
+<com.android.email.Preferences: android.content.SharedPreferences getSharedPreferences(android.content.Context)> -> _SOURCE_
+<com.android.contacts.list.ContactListFilter: com.android.contacts.list.ContactListFilter restoreDefaultPreferences(android.content.SharedPreferences)> -> _SOURCE_
+<android.app.ContextImpl: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)> -> _SOURCE_
+<com.android.contacts.ContactsActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)> -> _SOURCE_
+<com.android.camera.ComboPreferences: android.content.SharedPreferences getGlobal()> -> _SOURCE_
+<android.content.ContextWrapper: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)> -> _SOURCE_
+<android.preference.Preference: android.content.SharedPreferences getSharedPreferences()> -> _SOURCE_
+<com.android.mms.util.DownloadManager: boolean getAutoDownloadState(android.content.SharedPreferences)> -> _SOURCE_
+<android.preference.PreferenceManager: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)> -> _SOURCE_
+<com.android.calendar.CalendarUtils: android.content.SharedPreferences getSharedPreferences(android.content.Context,java.lang.String)> -> _SOURCE_
+<android.test.mock.MockContext: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)> -> _SOURCE_
+<android.app.SharedPreferencesImpl: java.lang.String getString(java.lang.String,java.lang.String)> -> _SOURCE_
+<android.preference.PreferenceManager: int getSharedPreferencesMode()> -> _SOURCE_
+<android.preference.PreferenceManager: java.lang.String getSharedPreferencesName()> -> _SOURCE_
+<android.preference.PreferenceManager: android.content.SharedPreferences getSharedPreferences()> -> _SOURCE_
+<com.android.camera.ComboPreferences: android.content.SharedPreferences getLocal()> -> _SOURCE_
+<com.android.inputmethod.latin.SettingsValues: java.lang.String getPrefAdditionalSubtypes(android.content.SharedPreferences,android.content.res.Resources)> -> _SOURCE_
+<com.android.calendar.alerts.AlertUtils: android.content.SharedPreferences getFiredAlertsTable(android.content.Context)> -> _SOURCE_
+<com.android.contacts.ContactsApplication: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)> -> _SOURCE_
+<android.app.SharedPreferencesImpl: long getLong(java.lang.String,long)> -> _SOURCE_
+<com.android.browser.BrowserSettings: android.content.SharedPreferences getPreferences()> -> _SOURCE_
+<android.preference.Preference: android.content.SharedPreferences$Editor getEditor()> -> _SOURCE_
+<android.app.SharedPreferencesImpl: float getFloat(java.lang.String,float)> -> _SOURCE_
+<android.app.Activity: android.content.SharedPreferences getPreferences(int)> -> _SOURCE_
+<com.android.phone.sip.SipSharedPreferences: java.lang.String getPrimaryAccount()> -> _SOURCE_
+<android.preference.PreferenceManager: android.content.SharedPreferences$Editor getEditor()> -> _SOURCE_
+<com.android.phone.sip.SipSharedPreferences: int getProfilesCount()> -> _SOURCE_
+<com.android.browser.widget.BookmarkThumbnailWidgetService: android.content.SharedPreferences getWidgetState(android.content.Context,int)> -> _SOURCE_
+<android.app.SharedPreferencesImpl: java.util.Map getAll()> -> _SOURCE_
+<com.android.calendar.GeneralPreferences: android.content.SharedPreferences getSharedPreferences(android.content.Context)> -> _SOURCE_
+
+
+% SmsManager
+<android.telephony.gsm.SmsManager: java.util.ArrayList getAllMessagesFromSim()> -> _SOURCE_
+<android.telephony.SmsManager: java.util.ArrayList getAllMessagesFromIcc()> -> _SOURCE_
+<android.telephony.SmsManager: android.telephony.SmsManager getDefault()> -> _SOURCE_
+<android.telephony.gsm.SmsManager: android.telephony.gsm.SmsManager getDefault()> -> _SOURCE_
+<android.telephony.gsm.SmsManager: java.util.ArrayList divideMessage(java.lang.String)> -> _SOURCE_
+<android.telephony.SmsManager: java.util.ArrayList divideMessage(java.lang.String)> -> _SOURCE_
+
+
+<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)> -> _SINK_ 
+<android.telephony.SmsManager: void sendDataMessage(java.lang.String,java.lang.String,short,byte[],android.app.PendingIntent,android.app.PendingIntent)> -> _SINK_ 
+<android.telephony.SmsManager: void sendMultipartTextMessage(java.lang.String,java.lang.String,java.util.ArrayList,java.util.ArrayList,java.util.ArrayList)> -> _SINK_ 
+
+
+% gsm
+<com.android.internal.telephony.gsm.UsimServiceTable: java.lang.Object[] getValues()> -> _SOURCE_
+<com.android.internal.telephony.cdma.SmsMessage: byte[] getIncomingSmsFingerprint()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsCbHeader: int getDataCodingScheme()> -> _SOURCE_
+<com.android.internal.telephony.IccRecords: com.android.internal.telephony.gsm.UsimServiceTable getUsimServiceTable()> -> _SOURCE_
+<com.android.internal.telephony.GsmAlphabet: byte[] stringToGsm7BitPacked(java.lang.String,int,boolean,int,int)> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmConnection: int getGSMIndex()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: com.android.internal.telephony.Phone$DataActivityState getDataActivityState()> -> _SOURCE_
+<android.telephony.gsm.GsmCellLocation: int getCid()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmServiceStateTracker: int getCurrentDataConnectionState()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SimSmsInterfaceManager: java.util.List access$200(com.android.internal.telephony.gsm.SimSmsInterfaceManager)> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: java.lang.String getVoiceMailAlphaTag()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: com.android.internal.telephony.Call getRingingCall()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: void getNeighboringCids(android.os.Message)> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: java.lang.String getLine1AlphaTag()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SimPhoneBookInterfaceManager: java.util.List getAdnRecordsInEf(int)> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsBroadcastConfigInfo: int getFromServiceId()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: com.android.internal.telephony.IccPhoneBookInterfaceManager getIccPhoneBookInterfaceManager()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: java.lang.String getVoiceMailNumber()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: java.lang.String getSubscriberId()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SIMRecords: java.lang.String getMsisdnAlphaTag()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: java.util.List getPendingMmiCodes()> -> _SOURCE_
+<com.android.internal.telephony.gsm.VoiceMailConstants: java.lang.String getVoiceMailNumber(java.lang.String)> -> _SOURCE_
+<com.android.internal.telephony.gsm.SIMRecords: java.lang.String getMsisdnNumber()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsBroadcastConfigInfo: int getToCodeScheme()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmCall: com.android.internal.telephony.Phone getPhone()> -> _SOURCE_
+<com.android.email.activity.UIControllerOnePane: long getMailboxSettingsMailboxId()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage$PduParser: java.lang.String getUserDataKSC5601(int)> -> _SOURCE_
+<com.android.email.activity.UIControllerSearchTwoPane: long getMailboxSettingsMailboxId()> -> _SOURCE_
+<android.telephony.gsm.SmsManager: java.util.ArrayList getAllMessagesFromSim()> -> _SOURCE_
+<android.telephony.CellSignalStrengthGsm: int getLevel()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: java.lang.String getOriginatingAddress()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmMmiCode: java.lang.CharSequence getMessage()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmDataConnectionTracker: com.android.internal.telephony.DctConstants$State getState(java.lang.String)> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: boolean getMute()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: com.android.internal.telephony.CallTracker getCallTracker()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: java.lang.String getPseudoSubject()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmConnection: long getDisconnectTime()> -> _SOURCE_
+<com.android.email.activity.setup.AccountServerBaseFragment: android.os.Bundle getSettingsModeArgs()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: android.telephony.gsm.SmsMessage$SubmitPdu getSubmitPdu(java.lang.String,java.lang.String,java.lang.String,boolean)> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmConnection: com.android.internal.telephony.Call$State getState()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: long getTimestampMillis()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SIMRecords: int getDisplayRule(java.lang.String)> -> _SOURCE_
+<android.telephony.CellInfoGsm: android.telephony.CellIdentityGsm getCellIdentity()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmDataConnectionTracker: java.lang.String getActionIntentDataStallAlarm()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmConnection: java.lang.String getAddress()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage: com.android.internal.telephony.gsm.SmsMessage$SubmitPdu getSubmitPdu(java.lang.String,java.lang.String,java.lang.String,boolean)> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: void getSmscAddress(android.os.Message)> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmConnection: long getConnectTime()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: int getIndexOnSim()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage: int getProtocolIdentifier()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: boolean getDataRoamingEnabled()> -> _SOURCE_
+<android.telephony.gsm.GsmCellLocation: int getLac()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmDataConnectionTracker: int getApnProfileID(java.lang.String)> -> _SOURCE_
+<com.android.internal.telephony.gsm.UsimServiceTable: java.lang.String getTag()> -> _SOURCE_
+<com.android.internal.telephony.gsm.VoiceMailConstants: java.lang.String getCarrierName(java.lang.String)> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmDataConnection: int getProfileId()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmDataConnectionTracker: android.net.LinkProperties getLinkProperties(java.lang.String)> -> _SOURCE_
+<android.telephony.gsm.GsmCellLocation: int getPsc()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage$PduParser: com.android.internal.telephony.gsm.GsmSmsAddress getAddress()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: com.android.internal.telephony.PhoneConstants$State getState()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmServiceStateTracker: int getCurrentGprsState()> -> _SOURCE_
+<android.telephony.CellSignalStrengthGsm: int getAsuLevel()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SIMRecords: java.lang.String getIMSI()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: android.telephony.gsm.SmsMessage$SubmitPdu getSubmitPdu(java.lang.String,java.lang.String,short,byte[],boolean)> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmConnection: java.lang.String getRemainingPostDialString()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmConnection: int getNumberPresentation()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage$PduParser: java.lang.String getUserDataUCS2(int)> -> _SOURCE_
+<android.telephony.SignalStrength: int getGsmDbm()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsCbHeader: int getServiceCategory()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmConnection: com.android.internal.telephony.Connection$DisconnectCause getDisconnectCause()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: java.lang.String getLine1Number()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: android.telephony.gsm.SmsMessage createFromPdu(byte[])> -> _SOURCE_
+<android.telephony.gsm.SmsManager: android.telephony.gsm.SmsManager getDefault()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SIMRecords: java.lang.String getVoiceMailAlphaTag()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage: com.android.internal.telephony.gsm.SmsMessage$SubmitPdu getSubmitPdu(java.lang.String,java.lang.String,java.lang.String,boolean,byte[])> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: void getCallForwardingOption(int,android.os.Message)> -> _SOURCE_
+<com.android.internal.telephony.GsmAlphabet: byte[] stringToGsm8BitPacked(java.lang.String)> -> _SOURCE_
+<com.android.internal.telephony.GsmAlphabet: byte[] stringToGsm7BitPackedWithHeader(java.lang.String,byte[],int,int)> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsBroadcastConfigInfo: int getFromCodeScheme()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmConnection: com.android.internal.telephony.Connection$PostDialState getPostDialState()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmDataConnectionTracker: java.lang.String getActionIntentReconnectAlarm()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: java.lang.String getMeid()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: java.lang.String getDisplayOriginatingAddress()> -> _SOURCE_
+<com.android.internal.telephony.PhoneBase: com.android.internal.telephony.gsm.UsimServiceTable getUsimServiceTable()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SIMRecords: java.lang.String getVoiceMailNumber()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmCallTracker: com.android.internal.telephony.gsm.GsmConnection getConnectionByIndex(com.android.internal.telephony.gsm.GsmCall,int)> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmServiceStateTracker: com.android.internal.telephony.Phone getPhone()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: java.lang.String getServiceCenterAddress()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsCbHeader: int getSerialNumber()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmSmsCbMessage: android.telephony.SmsCbMessage createSmsCbMessage(android.telephony.SmsCbLocation,byte[][])> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: java.lang.String getImei()> -> _SOURCE_
+<android.telephony.SignalStrength: int getGsmLevel()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsCbHeader: int getGeographicalScope()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmConnection: long getHoldDurationMillis()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SimSmsInterfaceManager: java.util.List getAllMessagesFromIccEf()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsCbHeader: android.telephony.SmsCbEtwsInfo getEtwsInfo()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage$PduParser: byte[] getUserData()> -> _SOURCE_
+<com.android.internal.telephony.GsmAlphabet: int[] getEnabledLockingShiftTables()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmDataConnectionTracker: java.lang.String[] getActiveApnTypes()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage$PduParser: com.android.internal.telephony.SmsHeader getUserDataHeader()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsCbHeader: int getNumberOfPages()> -> _SOURCE_
+<android.telephony.CellIdentityGsm: int getMnc()> -> _SOURCE_
+<android.telephony.CellIdentityGsm: int getMcc()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: android.telephony.ServiceState getServiceState()> -> _SOURCE_
+<android.telephony.CellIdentityGsm: android.telephony.CellIdentityGsm copy()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: java.lang.String getDeviceSvn()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: com.android.internal.telephony.PhoneSubInfo getPhoneSubInfo()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: void getAvailableNetworks(android.os.Message)> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: java.lang.String getMsisdn()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage: int getDataCodingScheme()> -> _SOURCE_
+<com.android.internal.telephony.test.SimulatedGsmCallState: java.util.List getClccLines()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmDataConnectionTracker: com.android.internal.telephony.DctConstants$State getOverallState()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SIMFileHandler: java.lang.String getEFPath(int)> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmConnection: long getDurationMillis()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: com.android.internal.telephony.PhoneConstants$DataState getDataConnectionState(java.lang.String)> -> _SOURCE_
+<android.telephony.CellIdentityGsm: int getPsc()> -> _SOURCE_
+<com.android.internal.telephony.GsmAlphabet: byte[] stringToGsm7BitPacked(java.lang.String)> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: android.telephony.CellLocation getCellLocation()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage$PduParser: java.lang.String getUserDataGSM7Bit(int,int,int)> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: java.lang.String getMessageBody()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage: com.android.internal.telephony.SmsConstants$MessageClass getMessageClass()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: int getProtocolIdentifier()> -> _SOURCE_
+<com.android.internal.telephony.gsm.VoiceMailConstants: java.lang.String getVoiceMailTag(java.lang.String)> -> _SOURCE_
+<com.android.internal.telephony.gsm.UsimPhoneBookManager: java.util.ArrayList loadEfFilesFromUsim()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: java.lang.String getEmailBody()> -> _SOURCE_
+<android.telephony.SignalStrength: int getGsmSignalStrength()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SimTlv: int getTag()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SIMRecords: java.lang.String getOperatorNumeric()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmCall: java.util.List getConnections()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SpnOverride: java.lang.String getSpn(java.lang.String)> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage: int getStatus()> -> _SOURCE_
+<android.telephony.SignalStrength: int getGsmAsuLevel()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: com.android.internal.telephony.Call getBackgroundCall()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: int getStatusOnSim()> -> _SOURCE_
+<com.android.internal.telephony.PhoneProxy: com.android.internal.telephony.gsm.UsimServiceTable getUsimServiceTable()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: byte[] getUserData()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: int getTPLayerLengthForPDU(java.lang.String)> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsCbHeader: int getPageIndex()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmSMSDispatcher: java.lang.String getFormat()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: java.lang.String getEsn()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmDataConnectionTracker: android.net.LinkCapabilities getLinkCapabilities(java.lang.String)> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: android.telephony.gsm.SmsMessage$MessageClass getMessageClass()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmMmiCode: int getCLIRMode()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: int getPhoneType()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SimSmsInterfaceManager: java.util.ArrayList access$300(com.android.internal.telephony.gsm.SimSmsInterfaceManager,java.util.ArrayList)> -> _SOURCE_
+<android.telephony.CellInfoGsm$1: android.telephony.CellInfoGsm createFromParcel(android.os.Parcel)> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage$PduParser: int getByte()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsBroadcastConfigInfo: int getToServiceId()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmConnection: com.android.internal.telephony.UUSInfo getUUSInfo()> -> _SOURCE_
+<android.telephony.CellInfoGsm: android.telephony.CellSignalStrengthGsm getCellSignalStrength()> -> _SOURCE_
+<com.android.internal.telephony.GsmAlphabet: int[] getEnabledSingleShiftTables()> -> _SOURCE_
+<android.telephony.SignalStrength: int getGsmBitErrorRate()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage$PduParser: java.lang.String getSCAddress()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsCbHeader: android.telephony.SmsCbCmasInfo getCmasInfo()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: com.android.internal.telephony.IccSmsInterfaceManager getIccSmsInterfaceManager()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmMmiCode: com.android.internal.telephony.MmiCode$State getState()> -> _SOURCE_
+<com.android.internal.telephony.GsmAlphabet$TextEncodingDetails: java.lang.String toString()> -> _SOURCE_
+<com.android.internal.telephony.GsmAlphabet: byte[] stringToGsm7BitPackedWithHeader(java.lang.String,byte[])> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage: int getTPLayerLengthForPDU(java.lang.String)> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmConnection: com.android.internal.telephony.Call getCall()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmDataConnectionTracker: java.lang.String getActiveApnString(java.lang.String)> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: java.lang.String getEmailFrom()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage$PduParser: int getUserDataSeptetPadding()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmCallTracker: boolean getMute()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: byte[] getPdu()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: java.lang.String getPhoneName()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: void getDataCallList(android.os.Message)> -> _SOURCE_
+<com.android.internal.telephony.gsm.SimTlv: byte[] getData()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmSmsAddress: java.lang.String getAddressString()> -> _SOURCE_
+<android.telephony.gsm.SmsManager: java.util.ArrayList divideMessage(java.lang.String)> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: com.android.internal.telephony.Call getForegroundCall()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmConnection: long getCreateTime()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: int getStatus()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage: java.lang.String getDisplayMessageBody()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: void getPreferredNetworkType(android.os.Message)> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: void getCallWaiting(android.os.Message)> -> _SOURCE_
+<com.android.email.activity.UIControllerTwoPane: long getMailboxSettingsMailboxId()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: java.lang.String getDeviceId()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: com.android.internal.telephony.ServiceStateTracker getServiceStateTracker()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage: com.android.internal.telephony.gsm.SmsMessage$SubmitPdu getSubmitPdu(java.lang.String,java.lang.String,java.lang.String,boolean,byte[],int,int,int)> -> _SOURCE_
+<com.android.internal.telephony.gsm.SIMRecords: boolean getVoiceCallForwardingFlag()> -> _SOURCE_
+<com.android.internal.telephony.test.SimulatedGsmCallState: java.util.List getDriverCalls()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SimSmsInterfaceManager: java.util.List access$202(com.android.internal.telephony.gsm.SimSmsInterfaceManager,java.util.List)> -> _SOURCE_
+<com.android.internal.telephony.gsm.GsmDataConnectionTracker: boolean getAnyDataEnabled()> -> _SOURCE_
+<android.telephony.CellIdentityGsm: int getLac()> -> _SOURCE_
+<com.android.internal.telephony.PhoneFactory: com.android.internal.telephony.Phone getGsmPhone()> -> _SOURCE_
+<android.telephony.CellIdentityGsm: int getCid()> -> _SOURCE_
+<com.android.internal.telephony.GsmAlphabet: byte[] stringToGsm7BitPacked(java.lang.String,int,int)> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage: com.android.internal.telephony.gsm.SmsMessage$SubmitPdu getSubmitPdu(java.lang.String,java.lang.String,int,byte[],boolean)> -> _SOURCE_
+<com.android.internal.telephony.gsm.SIMRecords: com.android.internal.telephony.gsm.UsimServiceTable getUsimServiceTable()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SimPhoneBookInterfaceManager: int[] getAdnRecordsSize(int)> -> _SOURCE_
+<android.telephony.CellSignalStrengthGsm: int getDbm()> -> _SOURCE_
+<com.android.internal.telephony.gsm.SmsMessage$PduParser: long getSCTimestampMillis()> -> _SOURCE_
+
+% getMeid
+<com.android.internal.telephony.sip.SipPhoneBase: java.lang.String getMeid()> -> _SOURCE_
+<com.android.internal.telephony.cdma.CDMAPhone: java.lang.String getMeid()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: java.lang.String getMeid()> -> _SOURCE_
+<com.android.internal.telephony.sip.SipPhone: java.lang.String getMeid()> -> _SOURCE_
+<com.android.internal.telephony.PhoneProxy: java.lang.String getMeid()> -> _SOURCE_
+
+
+% getImei
+<com.android.internal.telephony.cdma.CDMAPhone: java.lang.String getImei()> -> _SOURCE_
+<com.android.internal.telephony.cdma.CDMALTEPhone: java.lang.String getImei()> -> _SOURCE_
+<com.android.internal.telephony.sip.SipPhone: java.lang.String getImei()> -> _SOURCE_
+<com.android.internal.telephony.gsm.GSMPhone: java.lang.String getImei()> -> _SOURCE_
+<com.android.internal.telephony.sip.SipPhoneBase: java.lang.String getImei()> -> _SOURCE_
+<com.android.internal.telephony.PhoneProxy: java.lang.String getImei()> -> _SOURCE_
+
+
+% location.Location
+<android.location.LocationManager: android.location.Location getLastKnownLocation(java.lang.String)> -> _SOURCE_
+<android.location.Location: android.location.Location getExtraLocation(java.lang.String)> -> _SOURCE_
+<android.location.Location: float getSpeed()> -> _SOURCE_
+<android.location.LocationManager: java.util.List getProviders(android.location.Criteria,boolean)> -> _SOURCE_
+<com.android.server.location.LocationBasedCountryDetector: long getQueryLocationTimeout()> -> _SOURCE_
+<android.location.Location: android.os.Bundle getExtras()> -> _SOURCE_
+<android.location.LocationManager: java.util.List getAllProviders()> -> _SOURCE_
+<com.android.server.location.LocationBasedCountryDetector: java.util.List getEnabledProviders()> -> _SOURCE_
+<com.android.server.location.LocationBasedCountryDetector: java.lang.String getCountryFromLocation(android.location.Location)> -> _SOURCE_
+<android.location.Location: float getAccuracy()> -> _SOURCE_
+<android.location.Location: double getAltitude()> -> _SOURCE_
+<android.location.LocationRequest: float getSmallestDisplacement()> -> _SOURCE_
+<com.android.server.location.LocationProviderProxy: com.android.internal.location.ProviderProperties getProperties()> -> _SOURCE_
+<android.location.LocationRequest: long getFastestInterval()> -> _SOURCE_
+<android.location.LocationManager: android.location.Location getLastKnownLocation(java.lang.String)> -> _SOURCE_
+<android.location.Location: double getLongitude()> -> _SOURCE_
+<android.location.LocationRequest: long getExpireAt()> -> _SOURCE_
+<android.location.LocationManager: android.location.GpsStatus getGpsStatus(android.location.GpsStatus)> -> _SOURCE_
+<com.android.server.location.LocationProviderProxy: java.lang.String getName()> -> _SOURCE_
+<android.location.Location: double getLatitude()> -> _SOURCE_
+<android.location.LocationManager: android.location.Location getLastLocation()> -> _SOURCE_
+<com.android.server.location.LocationBasedCountryDetector: android.location.Country detectCountry()> -> _SOURCE_
+<com.android.server.location.LocationProviderProxy: long getStatusUpdateTime()> -> _SOURCE_
+<com.android.server.location.LocationProviderProxy: int getStatus(android.os.Bundle)> -> _SOURCE_
+<android.location.LocationManager: android.location.LocationProvider getProvider(java.lang.String)> -> _SOURCE_
+<android.location.Location: float getBearing()> -> _SOURCE_
+<android.location.Location: long getElapsedRealtimeNanos()> -> _SOURCE_
+<com.android.server.LocationManagerService: android.location.Location getLastLocation(android.location.LocationRequest,java.lang.String)> -> _SOURCE_
+<android.location.LocationManager: boolean isProviderEnabled(java.lang.String)> -> _SOURCE_
+<android.location.LocationManager: java.lang.String getBestProvider(android.location.Criteria,boolean)> -> _SOURCE_
+<android.location.LocationProvider: int getPowerRequirement()> -> _SOURCE_
+<android.location.LocationRequest: int getNumUpdates()> -> _SOURCE_
+<android.location.LocationRequest: int getQuality()> -> _SOURCE_
+<android.location.LocationRequest: long getInterval()> -> _SOURCE_
+<android.location.LocationManager: java.util.List getProviders(boolean)> -> _SOURCE_
+<android.location.Location: long getTime()> -> _SOURCE_
+<android.location.Location: java.lang.String getProvider()> -> _SOURCE_
+<android.location.LocationRequest: java.lang.String getProvider()> -> _SOURCE_
+<android.location.LocationProvider: java.lang.String getName()> -> _SOURCE_
+<com.android.server.location.LocationFudger: android.location.Location getOrCreate(android.location.Location)> -> _SOURCE_
+<com.android.server.location.LocationBasedCountryDetector: android.location.Location getLastKnownLocation()> -> _SOURCE_
+<com.android.camera.Storage: android.net.Uri addImage(android.content.ContentResolver,java.lang.String,long,android.location.Location,int,int,java.lang.String,int,int)> -> _SOURCE_
+<android.location.ILocationManager$Stub$Proxy: android.location.Location getLastLocation(android.location.LocationRequest,java.lang.String)> -> _SOURCE_
+<com.android.server.location.LocationProviderProxy: java.lang.String getConnectedPackageName()> -> _SOURCE_
+<android.location.LocationProvider: int getAccuracy()> -> _SOURCE_
+<com.android.camera.LocationManager: android.location.Location getCurrentLocation()> -> _SOURCE_
+<com.google.android.apps.lightcycle.util.LocationProvider: android.location.Location getCurrentLocation()> -> _SOURCE_
+
+% PackageManager
+<android.content.pm.PackageManager: java.util.List getInstalledApplications(int)> -> _SOURCE_
+<android.content.pm.PackageManager: java.util.List getInstalledPackages(int)> -> _SOURCE_
+<android.content.pm.PackageManager: java.util.List queryIntentActivities(android.content.Intent,int)> -> _SOURCE_
+<android.content.pm.PackageManager: java.util.List queryIntentServices(android.content.Intent,int)> -> _SOURCE_
+<android.content.pm.PackageManager: java.util.List queryBroadcastReceivers(android.content.Intent,int)> -> _SOURCE_
+<android.content.pm.PackageManager: java.util.List queryContentProviders(java.lang.String,int,int)> -> _SOURCE_
+
+<android.content.pm.IPackageManager$Stub$Proxy: int getComponentEnabledSetting(android.content.ComponentName,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.pm.ActivityInfo getActivityInfo(android.content.ComponentName,int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.content.pm.ActivityInfo getActivityInfo(android.content.ComponentName,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService$AsecInstallArgs: java.lang.String getNativeLibraryPath()> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.content.pm.ApplicationInfo getApplicationInfo(java.lang.String,int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: int getPreferredActivities(java.util.List,java.util.List,java.lang.String)> -> _SOURCE_
+<android.content.pm.ComponentInfo: java.lang.CharSequence loadLabel(android.content.pm.PackageManager)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: android.content.pm.PermissionInfo getPermissionInfo(java.lang.String,int)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: android.content.pm.ParceledListSlice getInstalledPackages(int,java.lang.String,int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.content.res.Resources getResourcesForActivity(android.content.ComponentName)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService$AsecInstallArgs: java.lang.String getResourcePath()> -> _SOURCE_
+<com.android.server.pm.PackageVerificationState: com.android.server.pm.PackageManagerService$InstallArgs getInstallArgs()> -> _SOURCE_
+<android.content.pm.PackageItemInfo: android.graphics.drawable.Drawable loadLogo(android.content.pm.PackageManager)> -> _SOURCE_
+<android.content.pm.ResolveInfo: java.lang.CharSequence loadLabel(android.content.pm.PackageManager)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.util.List queryInstrumentation(java.lang.String,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.res.Resources getResourcesForActivity(android.content.ComponentName)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: java.lang.String getApkName(java.lang.String)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.content.pm.PackageInfo getPackageArchiveInfo(java.lang.String,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.util.List getInstalledApplications(int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.util.List getPreferredPackages(int)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: void getPackageSizeInfo(java.lang.String,int,android.content.pm.IPackageStatsObserver)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: int[] getPackageGids(java.lang.String)> -> _SOURCE_
+<android.content.pm.LabeledIntent: android.graphics.drawable.Drawable loadIcon(android.content.pm.PackageManager)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: android.content.pm.ProviderInfo getProviderInfo(android.content.ComponentName,int,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService$FileInstallArgs: java.lang.String getCodePath()> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: com.android.server.pm.PackageManagerService$InstallArgs access$2300(com.android.server.pm.PackageManagerService,com.android.server.pm.PackageManagerService$InstallParams)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: java.io.File getDataPathForUser(int)> -> _SOURCE_
+<android.app.ActivityThread: android.content.pm.IPackageManager getPackageManager()> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.pm.ApplicationInfo getApplicationInfo(java.lang.String,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.util.List queryPermissionsByGroup(java.lang.String,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: android.content.pm.PermissionInfo getPermissionInfo(java.lang.String,int)> -> _SOURCE_
+<android.app.admin.DeviceAdminInfo: java.lang.CharSequence loadDescription(android.content.pm.PackageManager)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.util.List queryBroadcastReceivers(android.content.Intent,int,int)> -> _SOURCE_
+<android.app.ApplicationErrorReport: android.content.ComponentName getErrorReportReceiver(android.content.pm.PackageManager,java.lang.String,java.lang.String)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: android.content.pm.ActivityInfo getActivityInfo(android.content.ComponentName,int,int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.graphics.drawable.Drawable getActivityIcon(android.content.Intent)> -> _SOURCE_
+<android.app.admin.DeviceAdminInfo: android.graphics.drawable.Drawable loadIcon(android.content.pm.PackageManager)> -> _SOURCE_
+<android.test.mock.MockPackageManager: java.lang.String[] getSystemSharedLibraryNames()> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: android.content.pm.PackageInfo getPackageInfo(java.lang.String,int,int)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: java.util.List queryIntentActivities(android.content.Intent,java.lang.String,int,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.pm.PackageInfo getPackageInfo(java.lang.String,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: android.content.pm.VerifierDeviceIdentity getVerifierDeviceIdentity()> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.lang.String[] currentToCanonicalPackageNames(java.lang.String[])> -> _SOURCE_
+<com.android.server.pm.PackageManagerService$InstallParams: android.content.pm.ManifestDigest getManifestDigest()> -> _SOURCE_
+<android.app.WallpaperInfo: android.graphics.drawable.Drawable loadThumbnail(android.content.pm.PackageManager)> -> _SOURCE_
+<android.content.pm.PackageManager: android.content.pm.PackageInfo getPackageArchiveInfo(java.lang.String,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.pm.PermissionInfo getPermissionInfo(java.lang.String,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: android.content.pm.ParceledListSlice getInstalledApplications(int,java.lang.String,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: com.android.server.pm.PackageManagerService$InstallArgs access$3000(com.android.server.pm.PackageManagerService,android.net.Uri,int,java.lang.String,java.lang.String)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: android.content.pm.PackageInfo getPackageInfo(java.lang.String,int,int)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: android.content.pm.ProviderInfo resolveContentProvider(java.lang.String,int,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.lang.CharSequence getText(java.lang.String,int,android.content.pm.ApplicationInfo)> -> _SOURCE_
+<android.app.AppGlobals: android.content.pm.IPackageManager getPackageManager()> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.graphics.drawable.Drawable getApplicationIcon(java.lang.String)> -> _SOURCE_
+<android.content.pm.PackageManager: java.util.List getInstalledPackages(int)> -> _SOURCE_
+<android.content.pm.PermissionGroupInfo: java.lang.CharSequence loadDescription(android.content.pm.PackageManager)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.pm.ActivityInfo getReceiverInfo(android.content.ComponentName,int)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: java.util.List queryPermissionsByGroup(java.lang.String,int)> -> _SOURCE_
+<android.content.pm.PackageItemInfo: java.lang.CharSequence loadLabel(android.content.pm.PackageManager)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: java.util.List queryIntentActivityOptions(android.content.ComponentName,android.content.Intent[],java.lang.String[],android.content.Intent,java.lang.String,int,int)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: android.content.pm.FeatureInfo[] getSystemAvailableFeatures()> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.pm.ProviderInfo getProviderInfo(android.content.ComponentName,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: int getPackageUid(java.lang.String,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: android.content.pm.ActivityInfo getReceiverInfo(android.content.ComponentName,int,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.graphics.drawable.Drawable getApplicationLogo(java.lang.String)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.content.pm.ProviderInfo getProviderInfo(android.content.ComponentName,int)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: java.util.List queryIntentActivityOptions(android.content.ComponentName,android.content.Intent[],java.lang.String[],android.content.Intent,java.lang.String,int,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: int getUidForSharedUser(java.lang.String)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.util.List queryIntentServices(android.content.Intent,int)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: java.lang.String[] currentToCanonicalPackageNames(java.lang.String[])> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: android.content.pm.FeatureInfo[] getSystemAvailableFeatures()> -> _SOURCE_
+<android.app.ApplicationPackageManager: int[] getPackageGids(java.lang.String)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: android.content.pm.ResolveInfo resolveIntent(android.content.Intent,java.lang.String,int,int)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: android.content.pm.PackageCleanItem nextPackageToClean(android.content.pm.PackageCleanItem)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService$AsecInstallArgs: java.lang.String getPackageName()> -> _SOURCE_
+<android.content.pm.PackageManager: java.lang.String getDataDirForUser(int,java.lang.String)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.res.Resources getResourcesForApplication(java.lang.String)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.util.List getInstalledPackages(int,int)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: java.util.List queryIntentReceivers(android.content.Intent,java.lang.String,int,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: java.io.File access$2200(com.android.server.pm.PackageManagerService,java.io.File)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: java.lang.String getInstallerPackageName(java.lang.String)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.graphics.drawable.Drawable getApplicationIcon(android.content.pm.ApplicationInfo)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.Intent getLaunchIntentForPackage(java.lang.String)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: android.content.pm.ApplicationInfo getApplicationInfo(java.lang.String,int,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService$AsecInstallArgs: java.lang.String getCodePath()> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.graphics.drawable.Drawable getDefaultActivityIcon()> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.content.pm.ServiceInfo getServiceInfo(android.content.ComponentName,int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: int getApplicationEnabledSetting(java.lang.String)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.util.List getAllPermissionGroups(int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: int getInstallLocation()> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: android.content.pm.ParceledListSlice getInstalledPackages(int,java.lang.String,int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: int getComponentEnabledSetting(android.content.ComponentName)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.util.List queryIntentActivitiesAsUser(android.content.Intent,int,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService$FileInstallArgs: boolean doRename(int,java.lang.String,java.lang.String)> -> _SOURCE_
+<android.content.pm.ApplicationInfo: java.lang.CharSequence loadDescription(android.content.pm.PackageManager)> -> _SOURCE_
+<android.content.pm.ApplicationInfo: android.content.pm.ApplicationInfo getApplicationInfo()> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: int getComponentEnabledSetting(android.content.ComponentName,int)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub: android.os.IBinder asBinder()> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: android.content.pm.PermissionGroupInfo getPermissionGroupInfo(java.lang.String,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: android.content.pm.ActivityInfo getActivityInfo(android.content.ComponentName,int,int)> -> _SOURCE_
+<android.test.mock.MockContext: android.content.pm.PackageManager getPackageManager()> -> _SOURCE_
+<android.view.inputmethod.InputMethodInfo: java.lang.CharSequence loadLabel(android.content.pm.PackageManager)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.util.List getInstalledPackages(int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: android.content.pm.ServiceInfo getServiceInfo(android.content.ComponentName,int,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.pm.FeatureInfo[] getSystemAvailableFeatures()> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: android.content.pm.InstrumentationInfo getInstrumentationInfo(android.content.ComponentName,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: java.lang.String[] getPackagesForUid(int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.lang.String[] getSystemSharedLibraryNames()> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: java.util.List queryIntentReceivers(android.content.Intent,java.lang.String,int,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: android.content.pm.ApplicationInfo getApplicationInfo(java.lang.String,int,int)> -> _SOURCE_
+<android.app.admin.DeviceAdminInfo: java.lang.CharSequence loadLabel(android.content.pm.PackageManager)> -> _SOURCE_
+<android.app.WallpaperInfo: android.graphics.drawable.Drawable loadIcon(android.content.pm.PackageManager)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: java.util.List queryInstrumentation(java.lang.String,int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.graphics.drawable.Drawable getActivityLogo(android.content.Intent)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.graphics.drawable.Drawable getActivityLogo(android.content.Intent)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: android.content.pm.ServiceInfo getServiceInfo(android.content.ComponentName,int,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.pm.ResolveInfo resolveService(android.content.Intent,int)> -> _SOURCE_
+<com.android.providers.applications.ApplicationsProvider: android.content.pm.PackageManager getPackageManager()> -> _SOURCE_
+<android.view.inputmethod.InputMethodInfo: android.graphics.drawable.Drawable loadIcon(android.content.pm.PackageManager)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.content.res.Resources getResourcesForApplication(java.lang.String)> -> _SOURCE_
+<android.app.WallpaperInfo: java.lang.CharSequence loadLabel(android.content.pm.PackageManager)> -> _SOURCE_
+<android.content.pm.PermissionInfo: java.lang.CharSequence loadDescription(android.content.pm.PackageManager)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.lang.CharSequence getApplicationLabel(android.content.pm.ApplicationInfo)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.util.List queryIntentActivityOptions(android.content.ComponentName,android.content.Intent[],android.content.Intent,int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.content.res.XmlResourceParser getXml(java.lang.String,int,android.content.pm.ApplicationInfo)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.graphics.drawable.Drawable getApplicationLogo(android.content.pm.ApplicationInfo)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.content.res.Resources getResourcesForApplication(android.content.pm.ApplicationInfo)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: android.content.pm.PermissionGroupInfo getPermissionGroupInfo(java.lang.String,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService$FileInstallArgs: java.lang.String getResourcePath()> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.lang.String getNameForUid(int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService$FileInstallArgs: java.lang.String getNativeLibraryPath()> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.pm.ProviderInfo resolveContentProvider(java.lang.String,int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.content.Intent getLaunchIntentForPackage(java.lang.String)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.pm.InstrumentationInfo getInstrumentationInfo(android.content.ComponentName,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: java.util.List queryIntentActivities(android.content.Intent,java.lang.String,int,int)> -> _SOURCE_
+<android.content.pm.LabeledIntent: java.lang.CharSequence loadLabel(android.content.pm.PackageManager)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: int getUidForSharedUser(java.lang.String)> -> _SOURCE_
+<com.android.server.PackageManagerBackupAgent: com.android.server.PackageManagerBackupAgent$Metadata getRestoredMetadata(java.lang.String)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.pm.PermissionGroupInfo getPermissionGroupInfo(java.lang.String,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.util.List queryContentProviders(java.lang.String,int,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService$InstallParams: android.net.Uri getPackageUri()> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.lang.String getInstallerPackageName(java.lang.String)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: java.util.List getPreferredPackages(int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.res.Resources getResourcesForApplication(android.content.pm.ApplicationInfo)> -> _SOURCE_
+<android.app.ContextImpl: android.content.pm.PackageManager getPackageManager()> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: java.util.List queryContentProviders(java.lang.String,int,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: void getPackageSizeInfo(java.lang.String,int,android.content.pm.IPackageStatsObserver)> -> _SOURCE_
+<android.content.ContextWrapper: android.content.pm.PackageManager getPackageManager()> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.graphics.drawable.Drawable getApplicationLogo(android.content.pm.ApplicationInfo)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: int[] getPackageGids(java.lang.String)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.graphics.drawable.Drawable getActivityIcon(android.content.ComponentName)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.graphics.drawable.Drawable getActivityLogo(android.content.ComponentName)> -> _SOURCE_
+<android.app.WallpaperInfo: java.lang.CharSequence loadAuthor(android.content.pm.PackageManager)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.pm.ServiceInfo getServiceInfo(android.content.ComponentName,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: int getPreferredActivities(java.util.List,java.util.List,java.lang.String)> -> _SOURCE_
+<com.android.launcher2.LauncherModel: com.android.launcher2.ShortcutInfo getShortcutInfo(android.content.pm.PackageManager,android.content.Intent,android.content.Context,android.database.Cursor,int,int,java.util.HashMap)> -> _SOURCE_
+<android.content.pm.PackageItemInfo: android.graphics.drawable.Drawable loadIcon(android.content.pm.PackageManager)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: java.lang.String getNameForUid(int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: java.lang.CharSequence getText(java.lang.String,int,android.content.pm.ApplicationInfo)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: android.content.pm.ParceledListSlice getInstalledApplications(int,java.lang.String,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.lang.String[] canonicalToCurrentPackageNames(java.lang.String[])> -> _SOURCE_
+<android.app.WallpaperInfo: java.lang.CharSequence loadDescription(android.content.pm.PackageManager)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: int getApplicationEnabledSetting(java.lang.String,int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: java.util.List getInstalledPackages(int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: java.lang.CharSequence getApplicationLabel(android.content.pm.ApplicationInfo)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.pm.VerifierDeviceIdentity getVerifierDeviceIdentity()> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: java.lang.String getInstallerPackageName(java.lang.String)> -> _SOURCE_
+<com.android.server.PackageManagerBackupAgent: java.util.Set getRestoredPackages()> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: java.lang.String getAsecPackageName(java.lang.String)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.graphics.drawable.Drawable getActivityLogo(android.content.ComponentName)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: java.lang.String[] getSystemSharedLibraryNames()> -> _SOURCE_
+<com.android.launcher2.LauncherModel: com.android.launcher2.ShortcutInfo getShortcutInfo(android.content.pm.PackageManager,android.content.Intent,android.content.Context)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: java.util.List getPersistentApplications(int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.graphics.drawable.Drawable getActivityIcon(android.content.Intent)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService$InstallArgs: android.os.UserHandle getUser()> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.content.pm.PackageInfo getPackageInfo(java.lang.String,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: java.util.List getPreferredPackages(int)> -> _SOURCE_
+<android.content.pm.PackageItemInfo: android.content.res.XmlResourceParser loadXmlMetaData(android.content.pm.PackageManager,java.lang.String)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.lang.String[] getPackagesForUid(int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: java.util.List getAllPermissionGroups(int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: java.util.List getPreferredPackages(int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.util.List queryBroadcastReceivers(android.content.Intent,int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.content.pm.PermissionGroupInfo getPermissionGroupInfo(java.lang.String,int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: java.lang.String[] getPackagesForUid(int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.graphics.drawable.Drawable getApplicationLogo(java.lang.String)> -> _SOURCE_
+<com.android.providers.contacts.ContactDirectoryManager: java.util.Set getDirectoryProviderPackages(android.content.pm.PackageManager)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: android.content.pm.ActivityInfo getReceiverInfo(android.content.ComponentName,int,int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.graphics.drawable.Drawable getApplicationIcon(android.content.pm.ApplicationInfo)> -> _SOURCE_
+<android.test.mock.MockPackageManager: int[] getPackageGids(java.lang.String)> -> _SOURCE_
+<android.app.ApplicationPackageManager: int getApplicationEnabledSetting(java.lang.String)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: android.content.pm.InstrumentationInfo getInstrumentationInfo(android.content.ComponentName,int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.content.pm.InstrumentationInfo getInstrumentationInfo(android.content.ComponentName,int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: int getPreferredActivities(java.util.List,java.util.List,java.lang.String)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: android.content.pm.ResolveInfo resolveService(android.content.Intent,java.lang.String,int,int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.graphics.drawable.Drawable getDrawable(java.lang.String,int,android.content.pm.ApplicationInfo)> -> _SOURCE_
+<android.test.mock.MockPackageManager: java.util.List getAllPermissionGroups(int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: java.util.List getInstalledApplications(int)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: java.util.List getAllPermissionGroups(int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: java.lang.String getInstallerPackageName(java.lang.String)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: int getApplicationEnabledSetting(java.lang.String,int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.content.pm.ActivityInfo getReceiverInfo(android.content.ComponentName,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.graphics.drawable.Drawable getActivityIcon(android.content.ComponentName)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: int getPackageUid(java.lang.String,int)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: java.lang.String[] getSystemSharedLibraryNames()> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: int getUidForSharedUser(java.lang.String)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: java.util.List getPersistentApplications(int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.content.pm.FeatureInfo[] getSystemAvailableFeatures()> -> _SOURCE_
+<com.android.server.pm.PackageManagerService$HandlerParams: android.os.UserHandle getUser()> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: android.content.pm.VerifierDeviceIdentity getVerifierDeviceIdentity()> -> _SOURCE_
+<android.app.ApplicationPackageManager: int getComponentEnabledSetting(android.content.ComponentName)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.util.List queryIntentActivities(android.content.Intent,int)> -> _SOURCE_
+<android.content.pm.PackageManager: void getPackageSizeInfo(java.lang.String,android.content.pm.IPackageStatsObserver)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: java.lang.String getNameForUid(int)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: java.util.List queryIntentServices(android.content.Intent,java.lang.String,int,int)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.content.pm.PermissionInfo getPermissionInfo(java.lang.String,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.util.List queryIntentServicesAsUser(android.content.Intent,int,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.graphics.drawable.Drawable getDrawable(java.lang.String,int,android.content.pm.ApplicationInfo)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService: java.lang.String getTempContainerId()> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: int getPreferredActivities(java.util.List,java.util.List,java.lang.String)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: java.lang.String[] canonicalToCurrentPackageNames(java.lang.String[])> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: java.lang.String[] getPackagesForUid(int)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: java.lang.String getInterfaceDescriptor()> -> _SOURCE_
+<android.content.pm.ResolveInfo: android.graphics.drawable.Drawable loadIcon(android.content.pm.PackageManager)> -> _SOURCE_
+<android.test.mock.MockPackageManager: android.graphics.drawable.Drawable getApplicationIcon(java.lang.String)> -> _SOURCE_
+<com.android.server.pm.PackageManagerService$DumpState: com.android.server.pm.SharedUserSetting getSharedUser()> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: android.content.pm.ProviderInfo getProviderInfo(android.content.ComponentName,int,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.graphics.drawable.Drawable getDefaultActivityIcon()> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.res.XmlResourceParser getXml(java.lang.String,int,android.content.pm.ApplicationInfo)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.pm.ResolveInfo resolveActivityAsUser(android.content.Intent,int,int)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: int getInstallLocation()> -> _SOURCE_
+<android.test.mock.MockPackageManager: java.lang.String getNameForUid(int)> -> _SOURCE_
+<android.content.pm.IPackageManager$Stub$Proxy: java.util.List queryIntentServices(android.content.Intent,java.lang.String,int,int)> -> _SOURCE_
+<android.app.ApplicationPackageManager: android.content.res.Resources getResourcesForApplicationAsUser(java.lang.String,int)> -> _SOURCE_
+
+% WifiInfo
+<android.net.wifi.WifiInfo: android.net.NetworkInfo$DetailedState getDetailedStateOf(android.net.wifi.SupplicantState)> -> _SOURCE_
+<android.net.wifi.WifiInfo: int getLinkSpeed()> -> _SOURCE_
+<android.net.wifi.WifiInfo: java.lang.String getMacAddress()> -> _SOURCE_
+<com.android.server.WifiService: android.net.wifi.WifiInfo getConnectionInfo()> -> _SOURCE_
+<android.net.wifi.WifiInfo: int getRssi()> -> _SOURCE_
+<android.net.wifi.WifiInfo: java.lang.String getSSID()> -> _SOURCE_
+<android.net.wifi.WifiManager: android.net.wifi.WifiInfo getConnectionInfo()> -> _SOURCE_
+<android.net.wifi.WifiInfo: boolean getHiddenSSID()> -> _SOURCE_
+<android.net.wifi.WifiInfo: android.net.wifi.SupplicantState getSupplicantState()> -> _SOURCE_
+<android.net.wifi.WifiInfo: int getIpAddress()> -> _SOURCE_
+<android.net.wifi.WifiInfo: android.net.wifi.WifiSsid getWifiSsid()> -> _SOURCE_
+<android.net.wifi.WifiInfo: boolean getMeteredHint()> -> _SOURCE_
+<android.net.wifi.IWifiManager$Stub$Proxy: android.net.wifi.WifiInfo getConnectionInfo()> -> _SOURCE_
+<android.net.wifi.WifiInfo: java.lang.String getBSSID()> -> _SOURCE_
+<android.net.wifi.WifiInfo: int getNetworkId()> -> _SOURCE_
+
+% AudioRecord
+<android.media.AudioRecord: int getAudioFormat()> -> _SOURCE_
+<android.media.AudioRecord: int getMinBufferSize(int,int,int)> -> _SOURCE_
+<android.media.AudioRecord: int getAudioSessionId()> -> _SOURCE_
+<android.media.AudioRecord: int getState()> -> _SOURCE_
+<android.media.AudioRecord: int getChannelConfiguration()> -> _SOURCE_
+<android.media.AudioRecord: int getNotificationMarkerPosition()> -> _SOURCE_
+<android.media.AudioRecord: int getSampleRate()> -> _SOURCE_
+<android.media.AudioRecord: int getAudioSource()> -> _SOURCE_
+<android.media.AudioRecord: int getChannelCount()> -> _SOURCE_
+<android.media.AudioRecord: int getPositionNotificationPeriod()> -> _SOURCE_
+<android.media.AudioRecord: int getRecordingState()> -> _SOURCE_
+
+<android.media.AudioRecord: int read(short[],int,int)> -> _SOURCE_
+<android.media.AudioRecord: int read(byte[],int,int)> -> _SOURCE_
+<android.media.AudioRecord: int read(java.nio.ByteBuffer,int)> -> _SOURCE_
+
+% LocationManager
+<com.android.server.LocationManagerService: java.lang.String getFromLocationName(java.lang.String,double,double,double,double,int,android.location.GeocoderParams,java.util.List)> -> _SOURCE_
+<android.location.ILocationManager$Stub$Proxy: java.util.List getProviders(android.location.Criteria,boolean)> -> _SOURCE_
+<android.location.LocationManager: java.util.List getProviders(android.location.Criteria,boolean)> -> _SOURCE_
+<android.location.LocationManager: java.util.List getAllProviders()> -> _SOURCE_
+<com.android.server.LocationManagerService: java.lang.String getBestProvider(android.location.Criteria,boolean)> -> _SOURCE_
+<android.location.LocationManager: android.location.Location getLastKnownLocation(java.lang.String)> -> _SOURCE_
+<android.location.ILocationManager$Stub$Proxy: java.lang.String getFromLocationName(java.lang.String,double,double,double,double,int,android.location.GeocoderParams,java.util.List)> -> _SOURCE_
+<android.location.ILocationManager$Stub$Proxy: com.android.internal.location.ProviderProperties getProviderProperties(java.lang.String)> -> _SOURCE_
+<android.location.LocationManager: android.location.GpsStatus getGpsStatus(android.location.GpsStatus)> -> _SOURCE_
+<com.android.server.LocationManagerService$Receiver: android.location.ILocationListener getListener()> -> _SOURCE_
+<android.location.LocationManager: android.location.Location getLastLocation()> -> _SOURCE_
+<android.location.LocationManager: android.location.LocationProvider getProvider(java.lang.String)> -> _SOURCE_
+<com.android.server.LocationManagerService: android.location.Location getLastLocation(android.location.LocationRequest,java.lang.String)> -> _SOURCE_
+<android.location.ILocationManager$Stub: android.os.IBinder asBinder()> -> _SOURCE_
+<android.location.LocationManager: boolean isProviderEnabled(java.lang.String)> -> _SOURCE_
+<com.android.server.LocationManagerService: java.lang.String getFromLocation(double,double,int,android.location.GeocoderParams,java.util.List)> -> _SOURCE_
+<android.location.LocationManager: java.lang.String getBestProvider(android.location.Criteria,boolean)> -> _SOURCE_
+<android.location.ILocationManager$Stub$Proxy: java.lang.String getInterfaceDescriptor()> -> _SOURCE_
+<android.location.LocationManager: java.util.List getProviders(boolean)> -> _SOURCE_
+<com.android.server.LocationManagerService: java.util.List getProviders(android.location.Criteria,boolean)> -> _SOURCE_
+<com.android.server.LocationManagerService: com.android.internal.location.ProviderProperties getProviderProperties(java.lang.String)> -> _SOURCE_
+<android.location.ILocationManager$Stub$Proxy: android.location.Location getLastLocation(android.location.LocationRequest,java.lang.String)> -> _SOURCE_
+<com.android.server.LocationManagerService: java.util.List getAllProviders()> -> _SOURCE_
+<android.location.ILocationManager$Stub$Proxy: java.lang.String getBestProvider(android.location.Criteria,boolean)> -> _SOURCE_
+<com.android.camera.LocationManager: android.location.Location getCurrentLocation()> -> _SOURCE_
+<android.location.ILocationManager$Stub$Proxy: java.util.List getAllProviders()> -> _SOURCE_
+<android.location.ILocationManager$Stub$Proxy: java.lang.String getFromLocation(double,double,int,android.location.GeocoderParams,java.util.List)> -> _SOURCE_
+
+
+% TelephonyManager
+<android.telephony.TelephonyManager: java.lang.String getSubscriberId()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getSimCountryIso()> -> _SOURCE_
+<android.telephony.TelephonyManager: int getCdmaEriIconMode()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getSimOperator()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getVoiceMailAlphaTag()> -> _SOURCE_
+<android.telephony.TelephonyManager: int getLteOnCdmaModeStatic()> -> _SOURCE_
+<android.telephony.TelephonyManager: int getNetworkClass(int)> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getNetworkCountryIso()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getNetworkOperatorName()> -> _SOURCE_
+<android.telephony.TelephonyManager: int getPhoneType(int)> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String[] getIsimImpu()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getLine1AlphaTag()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getVoiceMailNumber()> -> _SOURCE_
+<android.telephony.TelephonyManager: int getDataState()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getSimOperatorName()> -> _SOURCE_
+<com.android.mms.MmsApp: android.telephony.TelephonyManager getTelephonyManager()> -> _SOURCE_
+<android.telephony.TelephonyManager: int getCdmaEriIconIndex()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getDeviceSoftwareVersion()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getMsisdn()> -> _SOURCE_
+<android.telephony.TelephonyManager: int getDataActivity()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.util.List getNeighboringCellInfo()> -> _SOURCE_
+<android.telephony.TelephonyManager: int getVoiceMessageCount()> -> _SOURCE_
+<android.telephony.TelephonyManager: android.telephony.TelephonyManager getDefault()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.util.List getAllCellInfo()> -> _SOURCE_
+<android.telephony.TelephonyManager: int getLteOnCdmaMode()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getIsimImpi()> -> _SOURCE_
+<android.telephony.TelephonyManager: int getNetworkType()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getCdmaEriText()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getDeviceId()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getIsimDomain()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getNetworkTypeName(int)> -> _SOURCE_
+<android.telephony.TelephonyManager: int getPhoneType()> -> _SOURCE_
+<android.telephony.TelephonyManager: int getCurrentPhoneType()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getCompleteVoiceMailNumber()> -> _SOURCE_
+<android.telephony.TelephonyManager: android.telephony.CellLocation getCellLocation()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getNetworkTypeName()> -> _SOURCE_
+<android.telephony.TelephonyManager: int getCallState()> -> _SOURCE_
+<android.telephony.TelephonyManager: int getSimState()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getLine1Number()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getSimSerialNumber()> -> _SOURCE_
+<com.android.internal.policy.impl.PhoneFallbackEventHandler: android.telephony.TelephonyManager getTelephonyManager()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getNetworkOperator()> -> _SOURCE_
+
+% bluetooth
+<android.bluetooth.BluetoothA2dp: int getPriority(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService$AdapterServiceBinder: com.android.bluetooth.btservice.AdapterService getService()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService: android.os.ParcelUuid[] getRemoteUuids(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetService: com.android.bluetooth.hfp.HeadsetService getHeadsetService()> -> _SOURCE_
+<android.bluetooth.IBluetoothHeadsetPhone$Stub$Proxy: java.lang.String getInterfaceDescriptor()> -> _SOURCE_
+<com.android.bluetooth.a2dp.A2dpService: int getConnectionState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterProperties: int getProfileConnectionState(int)> -> _SOURCE_
+<android.media.AudioManager: int setBluetoothA2dpDeviceConnectionState(android.bluetooth.BluetoothDevice,int)> -> _SOURCE_
+<android.bluetooth.BluetoothDevice: java.lang.String getName()> -> _SOURCE_
+<android.bluetooth.IBluetoothPbap$Stub$Proxy: android.bluetooth.BluetoothDevice getClient()> -> _SOURCE_
+<android.bluetooth.BluetoothDevice: java.lang.String getAliasName()> -> _SOURCE_
+<android.bluetooth.BluetoothTetheringDataTracker: android.bluetooth.BluetoothTetheringDataTracker getInstance()> -> _SOURCE_
+<com.android.bluetooth.btservice.RemoteDevices$DeviceProperties: int getBondState()> -> _SOURCE_
+<android.bluetooth.IBluetoothHeadset$Stub: android.os.IBinder asBinder()> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: int getScanMode()> -> _SOURCE_
+<com.android.bluetooth.opp.BluetoothOppPreference: int getChannel(android.bluetooth.BluetoothDevice,int)> -> _SOURCE_
+<com.android.bluetooth.a2dp.A2dpService: int getPriority(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.opp.BluetoothOppPreference: com.android.bluetooth.opp.BluetoothOppPreference getInstance(android.content.Context)> -> _SOURCE_
+<android.bluetooth.BluetoothHeadset: java.util.List getConnectedDevices()> -> _SOURCE_
+<android.bluetooth.IBluetoothInputDevice$Stub$Proxy: java.util.List getConnectedDevices()> -> _SOURCE_
+<android.bluetooth.IBluetoothInputDevice$Stub$Proxy: java.lang.String getInterfaceDescriptor()> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetPhoneState: int getBatteryCharge()> -> _SOURCE_
+<com.android.server.BluetoothManagerService: java.lang.String getAddress()> -> _SOURCE_
+<android.bluetooth.IBluetoothHealth$Stub: android.os.IBinder asBinder()> -> _SOURCE_
+<android.bluetooth.IBluetoothStateChangeCallback$Stub: android.os.IBinder asBinder()> -> _SOURCE_
+<android.bluetooth.BluetoothDevice: java.lang.String getAlias()> -> _SOURCE_
+<android.bluetooth.IBluetoothCallback$Stub: android.os.IBinder asBinder()> -> _SOURCE_
+<android.bluetooth.BluetoothDevice: boolean getTrustState()> -> _SOURCE_
+<android.bluetooth.BluetoothA2dp: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<com.android.bluetooth.btservice.ProfileService: android.os.IBinder onBind(android.content.Intent)> -> _SOURCE_
+<android.bluetooth.BluetoothHealth: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<android.bluetooth.BluetoothSocket: java.io.InputStream getInputStream()> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: boolean getProfileProxy(android.content.Context,android.bluetooth.BluetoothProfile$ServiceListener,int)> -> _SOURCE_
+<com.android.bluetooth.a2dp.A2dpService: com.android.bluetooth.btservice.ProfileService$IProfileServiceBinder initBinder()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService: int getAdapterConnectionState()> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub$Proxy: int getState()> -> _SOURCE_
+<com.android.bluetooth.opp.BluetoothOppBatch: com.android.bluetooth.opp.BluetoothOppShareInfo getPendingShare()> -> _SOURCE_
+<com.android.nfc.handover.HandoverManager: android.nfc.NdefRecord createBluetoothOobDataRecord()> -> _SOURCE_
+<android.bluetooth.BluetoothHealthAppConfiguration: int getDataType()> -> _SOURCE_
+<com.android.bluetooth.a2dp.A2dpStateMachine: java.util.List getConnectedDevices()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterProperties: int getScanMode()> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: android.bluetooth.BluetoothServerSocket listenUsingRfcommWithServiceRecord(java.lang.String,java.util.UUID)> -> _SOURCE_
+<android.bluetooth.IBluetoothInputDevice$Stub$Proxy: int getPriority(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub$Proxy: int getScanMode()> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: android.bluetooth.BluetoothServerSocket listenUsingInsecureRfcommWithServiceRecord(java.lang.String,java.util.UUID)> -> _SOURCE_
+<android.bluetooth.BluetoothSocket: android.bluetooth.BluetoothDevice getRemoteDevice()> -> _SOURCE_
+<com.android.bluetooth.hdp.HealthService: java.util.List getHealthDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterProperties: java.lang.String getName()> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: android.bluetooth.BluetoothDevice getRemoteDevice(byte[])> -> _SOURCE_
+<android.bluetooth.IBluetoothInputDevice$Stub$Proxy: int getConnectionState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.BluetoothTetheringDataTracker: int getDefaultGatewayAddr()> -> _SOURCE_
+<com.android.nfc.handover.HandoverManager: com.android.nfc.handover.HandoverManager$BluetoothHandoverData parseBtOob(java.nio.ByteBuffer)> -> _SOURCE_
+<android.bluetooth.BluetoothHeadset: int getConnectionState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService$AdapterServiceBinder: int getDiscoverableTimeout()> -> _SOURCE_
+<android.bluetooth.IBluetoothHealthCallback$Stub$Proxy: java.lang.String getInterfaceDescriptor()> -> _SOURCE_
+<android.bluetooth.IBluetoothHeadsetPhone$Stub: android.os.IBinder asBinder()> -> _SOURCE_
+<com.android.bluetooth.hfp.AtPhonebook: java.lang.String getLastDialledNumber()> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetPhoneState: int getSignal()> -> _SOURCE_
+<com.android.bluetooth.hid.HidService: int getPriority(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.BluetoothDevice: android.bluetooth.IBluetooth getService()> -> _SOURCE_
+<com.android.bluetooth.pbap.BluetoothPbapService: java.lang.String getRemoteDeviceName()> -> _SOURCE_
+<android.bluetooth.IBluetoothManagerCallback$Stub: android.os.IBinder asBinder()> -> _SOURCE_
+<com.android.bluetooth.opp.BluetoothOppTransfer: int getBatchId()> -> _SOURCE_
+<com.android.nfc.handover.BluetoothOppHandover: java.lang.String getMimeTypeForUri(android.content.Context,android.net.Uri)> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService: java.lang.String getRemoteAlias(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.BluetoothInputDevice: int getPriority(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterProperties: android.bluetooth.BluetoothDevice[] getBondedDevices()> -> _SOURCE_
+<com.android.bluetooth.opp.BluetoothOppUtility: java.lang.String getStatusDescription(android.content.Context,int,java.lang.String)> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: int getConnectionState()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService$AdapterServiceBinder: android.os.ParcelUuid[] getUuids()> -> _SOURCE_
+<com.android.bluetooth.Utils: byte[] getBytesFromAddress(java.lang.String)> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService$AdapterServiceBinder: java.lang.String getName()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterProperties: int getDiscoverableTimeout()> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub$Proxy: android.os.ParcelUuid[] getRemoteUuids(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.nfc.handover.HandoverManager: com.android.nfc.handover.PendingHandoverTransfer registerInTransferLocked(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.IBluetoothHeadsetPhone$Stub$Proxy: java.lang.String getNetworkOperator()> -> _SOURCE_
+<android.bluetooth.IBluetoothPbap$Stub$Proxy: int getState()> -> _SOURCE_
+<com.android.server.BluetoothManagerService: java.lang.String getName()> -> _SOURCE_
+<android.bluetooth.BluetoothA2dp: int getConnectionState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetService: int getPriority(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.pbap.BluetoothPbapService: java.lang.String getLocalPhoneNum()> -> _SOURCE_
+<android.bluetooth.BluetoothA2dp: java.util.List getConnectedDevices()> -> _SOURCE_
+<com.android.phone.BluetoothPhoneService$3: java.lang.String getSubscriberNumber()> -> _SOURCE_
+<android.bluetooth.IBluetoothA2dp$Stub$Proxy: java.util.List getConnectedDevices()> -> _SOURCE_
+<com.android.bluetooth.hid.HidService$BluetoothInputDeviceBinder: java.util.List getConnectedDevices()> -> _SOURCE_
+<com.android.bluetooth.a2dp.A2dpService: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<com.android.bluetooth.opp.BluetoothOppPreference: java.lang.String getName(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService$AdapterServiceBinder: int getAdapterConnectionState()> -> _SOURCE_
+<com.android.bluetooth.opp.BluetoothOppSendFileInfo: com.android.bluetooth.opp.BluetoothOppSendFileInfo generateFileInfo(android.content.Context,android.net.Uri,java.lang.String)> -> _SOURCE_
+<android.bluetooth.IBluetoothHeadset$Stub$Proxy: int getBatteryUsageHint(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.BluetoothSocket: android.bluetooth.BluetoothSocket accept(int)> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetStateMachine: int getAudioState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.IBluetoothA2dp$Stub: android.os.IBinder asBinder()> -> _SOURCE_
+<android.bluetooth.IBluetoothManager$Stub: android.os.IBinder asBinder()> -> _SOURCE_
+<android.bluetooth.BluetoothSocket: java.io.OutputStream getOutputStream()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService$AdapterServiceBinder: android.os.ParcelFileDescriptor createSocketChannel(int,java.lang.String,android.os.ParcelUuid,int,int)> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetStateMachine: java.util.List getConnectedDevices()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService: int getState()> -> _SOURCE_
+<com.android.bluetooth.btservice.ProfileService: java.lang.String getName()> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub$Proxy: int getBondState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.pan.PanService$BluetoothPanBinder: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<com.android.bluetooth.Utils: byte[] getByteAddress(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.BluetoothDevice: android.bluetooth.BluetoothClass getBluetoothClass()> -> _SOURCE_
+<android.bluetooth.BluetoothInputDevice: boolean getProtocolMode(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.BluetoothDevice: int getBondState()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService: android.os.ParcelUuid[] getUuids()> -> _SOURCE_
+<com.android.bluetooth.pbap.BluetoothPbapVcardManager: int getPhonebookSize(int)> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService: com.android.bluetooth.btservice.AdapterService getAdapterService()> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: int getProfileConnectionState(int)> -> _SOURCE_
+<android.bluetooth.IBluetoothPbap$Stub$Proxy: java.lang.String getInterfaceDescriptor()> -> _SOURCE_
+<android.bluetooth.BluetoothPan: boolean isTetheringOn()> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub$Proxy: int getRemoteClass(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.IBluetoothStateChangeCallback$Stub$Proxy: java.lang.String getInterfaceDescriptor()> -> _SOURCE_
+<com.android.bluetooth.pbap.BluetoothPbapVcardManager: java.util.ArrayList loadCallHistoryList(int)> -> _SOURCE_
+<com.android.bluetooth.pan.PanService: int getConnectionState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.BluetoothClass: int getMajorDeviceClass()> -> _SOURCE_
+<android.bluetooth.IBluetoothHeadset$Stub$Proxy: int getPriority(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.IBluetoothA2dp$Stub$Proxy: int getConnectionState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.hid.HidService: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<android.bluetooth.BluetoothPan: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<android.bluetooth.BluetoothPan: int getConnectionState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.opp.BluetoothOppManager: com.android.bluetooth.opp.BluetoothOppManager getInstance(android.content.Context)> -> _SOURCE_
+<android.bluetooth.BluetoothDevice: java.lang.String getAddress()> -> _SOURCE_
+<android.bluetooth.BluetoothPbap: android.bluetooth.BluetoothDevice getClient()> -> _SOURCE_
+<com.android.bluetooth.pan.PanService: java.util.List getConnectedDevices()> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub$Proxy: java.lang.String getInterfaceDescriptor()> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub$Proxy: java.lang.String getAddress()> -> _SOURCE_
+<android.bluetooth.IBluetoothPbap$Stub: android.os.IBinder asBinder()> -> _SOURCE_
+<com.android.bluetooth.pbap.BluetoothPbapService: java.lang.String getLocalPhoneName()> -> _SOURCE_
+<android.bluetooth.IBluetoothHeadset$Stub$Proxy: java.lang.String getInterfaceDescriptor()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService: java.lang.String getAddress()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService: int getBondState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetPhoneState: int getNumHeldCall()> -> _SOURCE_
+<com.android.bluetooth.hfp.AtPhonebook: boolean getCheckingAccessPermission()> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetService: java.util.List getConnectedDevices()> -> _SOURCE_
+<com.android.bluetooth.hdp.HealthService$BluetoothHealthBinder: android.os.ParcelFileDescriptor getMainChannelFd(android.bluetooth.BluetoothDevice,android.bluetooth.BluetoothHealthAppConfiguration)> -> _SOURCE_
+<com.android.bluetooth.btservice.RemoteDevices$DeviceProperties: short getRssi()> -> _SOURCE_
+<android.bluetooth.BluetoothTetheringDataTracker: android.net.LinkCapabilities getLinkCapabilities()> -> _SOURCE_
+<android.bluetooth.BluetoothHealthAppConfiguration: java.lang.String getName()> -> _SOURCE_
+<com.android.bluetooth.pbap.BluetoothPbapVcardManager: int getCallHistorySize(int)> -> _SOURCE_
+<android.bluetooth.IBluetoothInputDevice$Stub$Proxy: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<android.provider.Settings$Global: java.lang.String getBluetoothInputDevicePriorityKey(java.lang.String)> -> _SOURCE_
+<android.bluetooth.BluetoothHealthAppConfiguration: int getRole()> -> _SOURCE_
+<com.android.bluetooth.hid.HidService: int getConnectionState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.phone.PhoneGlobals: android.bluetooth.IBluetoothHeadsetPhone getBluetoothPhoneService()> -> _SOURCE_
+<android.bluetooth.BluetoothPan: java.util.List getConnectedDevices()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService$AdapterServiceBinder: android.os.ParcelUuid[] getRemoteUuids(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.internal.os.BatteryStatsImpl: int getBluetoothPingCount()> -> _SOURCE_
+<android.bluetooth.BluetoothHealth: int getConnectionState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetService: int getConnectionState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetPhoneState: int getCallState()> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub$Proxy: android.os.ParcelFileDescriptor connectSocket(android.bluetooth.BluetoothDevice,int,android.os.ParcelUuid,int,int)> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetPhoneState: int getNumActiveCall()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService$AdapterServiceBinder: int getState()> -> _SOURCE_
+<com.android.server.ConnectivityService: java.lang.String[] getTetherableBluetoothRegexs()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService: int getProfileConnectionState(int)> -> _SOURCE_
+<android.bluetooth.IBluetoothHealth$Stub$Proxy: int getHealthDeviceConnectionState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService$AdapterServiceBinder: android.bluetooth.BluetoothDevice[] getBondedDevices()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService: int getScanMode()> -> _SOURCE_
+<com.android.bluetooth.pbap.BluetoothPbapUtils: java.lang.String createProfileVCard(android.content.Context,int,byte[])> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService: java.lang.String getName()> -> _SOURCE_
+<android.bluetooth.IBluetoothHealth$Stub$Proxy: java.util.List getHealthDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<android.bluetooth.IBluetoothHeadsetPhone$Stub$Proxy: java.lang.String getSubscriberNumber()> -> _SOURCE_
+<android.bluetooth.BluetoothInputDevice: boolean getReport(android.bluetooth.BluetoothDevice,byte,byte,int)> -> _SOURCE_
+<android.bluetooth.IBluetoothInputDevice$Stub: android.os.IBinder asBinder()> -> _SOURCE_
+<com.android.bluetooth.pbap.BluetoothPbapService$2: android.bluetooth.BluetoothDevice getClient()> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetService$BluetoothHeadsetBinder: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<android.bluetooth.BluetoothSocket: int getPort()> -> _SOURCE_
+<android.bluetooth.IBluetoothPan$Stub: android.os.IBinder asBinder()> -> _SOURCE_
+<android.bluetooth.BluetoothHeadset: int getAudioState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.hid.HidService: boolean getReport(android.bluetooth.BluetoothDevice,byte,byte,int)> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub$Proxy: int getAdapterConnectionState()> -> _SOURCE_
+<com.android.bluetooth.a2dp.A2dpStateMachine: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: android.bluetooth.IBluetooth getBluetoothService(android.bluetooth.IBluetoothManagerCallback)> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetStateMachine: int getConnectionState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.BluetoothHeadset: int getBatteryUsageHint(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.BluetoothDevice: android.os.ParcelUuid[] getUuids()> -> _SOURCE_
+<com.android.bluetooth.hdp.HealthService: com.android.bluetooth.btservice.ProfileService$IProfileServiceBinder initBinder()> -> _SOURCE_
+<android.bluetooth.BluetoothHealth: android.os.ParcelFileDescriptor getMainChannelFd(android.bluetooth.BluetoothDevice,android.bluetooth.BluetoothHealthAppConfiguration)> -> _SOURCE_
+<com.android.bluetooth.a2dp.A2dpService: java.lang.String getName()> -> _SOURCE_
+<com.android.bluetooth.pbap.BluetoothPbapVcardManager: java.util.ArrayList getPhonebookNameList(int)> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService$AdapterServiceBinder: java.lang.String getRemoteName(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.IBluetoothManager$Stub$Proxy: java.lang.String getName()> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: java.util.Set getBondedDevices()> -> _SOURCE_
+<com.android.bluetooth.opp.BluetoothOppReceiveFileInfo: com.android.bluetooth.opp.BluetoothOppReceiveFileInfo generateFileInfo(android.content.Context,int)> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: android.bluetooth.BluetoothAdapter getDefaultAdapter()> -> _SOURCE_
+<android.bluetooth.BluetoothServerSocket: int getChannel()> -> _SOURCE_
+<android.bluetooth.BluetoothTetheringDataTracker: android.net.NetworkInfo getNetworkInfo()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService: android.os.ParcelFileDescriptor createSocketChannel(int,java.lang.String,android.os.ParcelUuid,int,int)> -> _SOURCE_
+<com.android.bluetooth.hdp.HealthService: java.lang.String getName()> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub$Proxy: int getProfileConnectionState(int)> -> _SOURCE_
+<android.bluetooth.BluetoothDevice: int getServiceChannel(android.os.ParcelUuid)> -> _SOURCE_
+<android.bluetooth.IBluetoothHealthCallback$Stub: android.os.IBinder asBinder()> -> _SOURCE_
+<android.bluetooth.BluetoothTetheringDataTracker: android.net.LinkProperties getLinkProperties()> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub$Proxy: java.lang.String getName()> -> _SOURCE_
+<com.android.bluetooth.pan.PanService: java.lang.String getName()> -> _SOURCE_
+<com.android.bluetooth.btservice.RemoteDevices$DeviceProperties: java.lang.String getAlias()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService: int getDiscoverableTimeout()> -> _SOURCE_
+<com.android.bluetooth.hdp.HealthService: android.os.ParcelFileDescriptor getMainChannelFd(android.bluetooth.BluetoothDevice,android.bluetooth.BluetoothHealthAppConfiguration)> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub$Proxy: java.lang.String getRemoteName(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterProperties: int getConnectionState()> -> _SOURCE_
+<android.bluetooth.IBluetoothHealth$Stub$Proxy: android.os.ParcelFileDescriptor getMainChannelFd(android.bluetooth.BluetoothDevice,android.bluetooth.BluetoothHealthAppConfiguration)> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: java.lang.String getName()> -> _SOURCE_
+<com.android.bluetooth.pbap.BluetoothPbapUtils: java.lang.String getProfileName(android.content.Context)> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: android.os.ParcelUuid[] getUuids()> -> _SOURCE_
+<android.provider.Settings$Global: java.lang.String getBluetoothA2dpSinkPriorityKey(java.lang.String)> -> _SOURCE_
+<com.android.bluetooth.a2dp.A2dpStateMachine: int getConnectionState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.net.ConnectivityManager: java.lang.String[] getTetherableBluetoothRegexs()> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetPhoneState: int getMicVolume()> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub$Proxy: int getDiscoverableTimeout()> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub$Proxy: java.lang.String getRemoteAlias(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.btservice.RemoteDevices$DeviceProperties: java.lang.String getName()> -> _SOURCE_
+<android.bluetooth.BluetoothInputDevice: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<com.android.bluetooth.btservice.RemoteDevices$DeviceProperties: byte[] getAddress()> -> _SOURCE_
+<com.android.bluetooth.pbap.BluetoothPbapCallLogComposer: java.lang.String getErrorReason()> -> _SOURCE_
+<com.android.bluetooth.opp.BluetoothOppManager: java.lang.String getDeviceName(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.a2dp.A2dpService: com.android.bluetooth.a2dp.A2dpService getA2dpService()> -> _SOURCE_
+<android.net.IConnectivityManager$Stub$Proxy: java.lang.String[] getTetherableBluetoothRegexs()> -> _SOURCE_
+<com.android.bluetooth.Utils: java.lang.String getAddressStringFromByte(byte[])> -> _SOURCE_
+<com.android.bluetooth.opp.BluetoothOppRfcommTransport: java.lang.String getRemoteAddress()> -> _SOURCE_
+<com.android.nfc.handover.HandoverManager: com.android.nfc.handover.HandoverManager$BluetoothHandoverData parseNokia(java.nio.ByteBuffer)> -> _SOURCE_
+<com.android.bluetooth.pbap.BluetoothPbapVcardManager: int getContactsSize()> -> _SOURCE_
+<android.bluetooth.IBluetoothPan$Stub$Proxy: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<android.bluetooth.BluetoothClass: int getDeviceClass()> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetService: int getBatteryUsageHint(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService$AdapterServiceBinder: java.lang.String getRemoteAlias(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.pan.PanService$BluetoothPanBinder: java.util.List getConnectedDevices()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService$AdapterServiceBinder: int getScanMode()> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub$Proxy: android.os.ParcelFileDescriptor createSocketChannel(int,java.lang.String,android.os.ParcelUuid,int,int)> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterProperties: int getBluetoothClass()> -> _SOURCE_
+<com.android.bluetooth.a2dp.A2dpService$BluetoothA2dpBinder: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<com.android.bluetooth.pbap.BluetoothPbapAuthenticator: byte[] onAuthenticationResponse(byte[])> -> _SOURCE_
+<com.android.nfc.handover.HandoverManager: com.android.nfc.handover.PendingHandoverTransfer registerOutTransferLocked(com.android.nfc.handover.HandoverManager$BluetoothHandoverData,android.net.Uri[])> -> _SOURCE_
+<android.bluetooth.BluetoothHealth: java.util.List getConnectedDevices()> -> _SOURCE_
+<com.android.bluetooth.a2dp.A2dpService$BluetoothA2dpBinder: java.util.List getConnectedDevices()> -> _SOURCE_
+<android.bluetooth.BluetoothInputDevice: java.util.List getConnectedDevices()> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: android.bluetooth.IBluetoothManager getBluetoothManager()> -> _SOURCE_
+<android.bluetooth.IBluetoothPan$Stub$Proxy: java.lang.String getInterfaceDescriptor()> -> _SOURCE_
+<android.bluetooth.IBluetoothA2dp$Stub$Proxy: int getPriority(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService$AdapterServiceBinder: java.lang.String getAddress()> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: java.lang.String getAddress()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService: android.bluetooth.BluetoothDevice[] getBondedDevices()> -> _SOURCE_
+<android.bluetooth.BluetoothUuid: int getServiceIdentifierFromParcelUuid(android.os.ParcelUuid)> -> _SOURCE_
+<com.android.bluetooth.opp.BluetoothOppUtility: com.android.bluetooth.opp.BluetoothOppSendFileInfo getSendFileInfo(android.net.Uri)> -> _SOURCE_
+<android.bluetooth.IBluetoothHeadset$Stub$Proxy: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<android.bluetooth.IBluetoothHealth$Stub$Proxy: java.util.List getConnectedHealthDevices()> -> _SOURCE_
+<com.android.bluetooth.hdp.HealthService: int getHealthDeviceConnectionState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.IBluetoothHeadset$Stub$Proxy: java.util.List getConnectedDevices()> -> _SOURCE_
+<android.bluetooth.IBluetoothHeadset$Stub$Proxy: int getAudioState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: int getState()> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetService: java.lang.String getName()> -> _SOURCE_
+<com.android.bluetooth.pbap.BluetoothPbapCallLogComposer: java.lang.String createOneEntry(boolean)> -> _SOURCE_
+<android.bluetooth.IBluetoothHealth$Stub$Proxy: java.lang.String getInterfaceDescriptor()> -> _SOURCE_
+<android.bluetooth.IBluetoothHeadset$Stub$Proxy: int getConnectionState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.pbap.BluetoothPbapVcardManager: java.util.ArrayList getContactNamesByNumber(java.lang.String)> -> _SOURCE_
+<com.android.internal.os.BatteryStatsImpl: long getBluetoothOnTime(long,int)> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService: int getRemoteClass(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.nfc.handover.HandoverManager: com.android.nfc.handover.HandoverManager$BluetoothHandoverData parseHandoverSelect(android.nfc.NdefMessage)> -> _SOURCE_
+<com.android.bluetooth.btservice.RemoteDevices$DeviceProperties: int getBluetoothClass()> -> _SOURCE_
+<com.android.bluetooth.hid.HidService: boolean getProtocolMode(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.btservice.RemoteDevices: android.bluetooth.BluetoothDevice getDevice(byte[])> -> _SOURCE_
+<com.android.bluetooth.hid.HidService: com.android.bluetooth.hid.HidService getHidService()> -> _SOURCE_
+<com.android.bluetooth.pbap.BluetoothPbapCallLogComposer: int getCount()> -> _SOURCE_
+<com.android.bluetooth.btservice.RemoteDevices$DeviceProperties: int getDeviceType()> -> _SOURCE_
+<com.android.bluetooth.hdp.HealthService$BluetoothHealthBinder: java.util.List getHealthDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<com.android.nfc.handover.HandoverManager: com.android.nfc.handover.HandoverManager$BluetoothHandoverData parse(android.nfc.NdefMessage)> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetService: int getAudioState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.a2dp.A2dpService: java.util.List getConnectedDevices()> -> _SOURCE_
+<android.bluetooth.IBluetoothPan$Stub$Proxy: java.util.List getConnectedDevices()> -> _SOURCE_
+<com.android.nfc.handover.HandoverManager: android.nfc.NdefRecord createBluetoothAlternateCarrierRecord(boolean)> -> _SOURCE_
+<android.bluetooth.IBluetoothInputDevice$Stub$Proxy: boolean getReport(android.bluetooth.BluetoothDevice,byte,byte,int)> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetPhoneState: int getRoam()> -> _SOURCE_
+<android.bluetooth.BluetoothHealthAppConfiguration: int getChannelType()> -> _SOURCE_
+<com.android.bluetooth.hid.HidService: java.lang.String getName()> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetPhoneState: int getService()> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub$Proxy: android.os.ParcelUuid[] getUuids()> -> _SOURCE_
+<android.bluetooth.IBluetoothManager$Stub$Proxy: java.lang.String getInterfaceDescriptor()> -> _SOURCE_
+<android.bluetooth.BluetoothTetheringDataTracker: java.lang.String getTcpBufferSizesPropName()> -> _SOURCE_
+<com.android.nfc.handover.BluetoothHeadsetHandover: boolean getProfileProxys()> -> _SOURCE_
+<com.android.phone.BluetoothPhoneService$3: java.lang.String getNetworkOperator()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterService: java.lang.String getRemoteName(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.btservice.ProfileService: android.bluetooth.BluetoothDevice getDevice(byte[])> -> _SOURCE_
+<com.android.bluetooth.pan.PanService: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<com.android.bluetooth.btservice.RemoteDevices$DeviceProperties: android.os.ParcelUuid[] getUuids()> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: int getDiscoverableTimeout()> -> _SOURCE_
+<com.android.bluetooth.btservice.Config: java.lang.Class[] getSupportedProfiles()> -> _SOURCE_
+<com.android.bluetooth.hdp.HealthService$BluetoothHealthBinder: java.util.List getConnectedHealthDevices()> -> _SOURCE_
+<android.bluetooth.BluetoothInputDevice: int getConnectionState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.IBluetoothCallback$Stub$Proxy: java.lang.String getInterfaceDescriptor()> -> _SOURCE_
+<com.android.server.connectivity.Tethering: java.lang.String[] getTetherableBluetoothRegexs()> -> _SOURCE_
+<com.android.bluetooth.hdp.HealthService: java.util.List getConnectedHealthDevices()> -> _SOURCE_
+<android.bluetooth.IBluetoothManagerCallback$Stub$Proxy: java.lang.String getInterfaceDescriptor()> -> _SOURCE_
+<com.android.bluetooth.btservice.RemoteDevices: com.android.bluetooth.btservice.RemoteDevices$DeviceProperties getDeviceProperties(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<android.bluetooth.IBluetoothA2dp$Stub$Proxy: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterProperties: android.os.ParcelUuid[] getUuids()> -> _SOURCE_
+<android.bluetooth.BluetoothHeadset: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetPhoneState: int getSpeakerVolume()> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub$Proxy: android.bluetooth.BluetoothDevice[] getBondedDevices()> -> _SOURCE_
+<android.bluetooth.BluetoothPbap: int getState()> -> _SOURCE_
+<android.bluetooth.BluetoothHeadset: int getPriority(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.hid.HidService$BluetoothInputDeviceBinder: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<com.android.bluetooth.pbap.BluetoothPbapVcardManager: java.lang.String getOwnerPhoneNumberVcard(boolean,byte[])> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetStateMachine: java.util.List getDevicesMatchingConnectionStates(int[])> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterProperties: byte[] getAddress()> -> _SOURCE_
+<android.bluetooth.IBluetooth$Stub: android.os.IBinder asBinder()> -> _SOURCE_
+<com.android.bluetooth.hfp.HeadsetService$BluetoothHeadsetBinder: java.util.List getConnectedDevices()> -> _SOURCE_
+<android.provider.Settings$Global: java.lang.String getBluetoothHeadsetPriorityKey(java.lang.String)> -> _SOURCE_
+<com.android.bluetooth.opp.BluetoothOppManager: int getBatchSize()> -> _SOURCE_
+<android.bluetooth.IBluetoothA2dp$Stub$Proxy: java.lang.String getInterfaceDescriptor()> -> _SOURCE_
+<com.android.bluetooth.btservice.AdapterProperties: int getState()> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: android.bluetooth.BluetoothServerSocket listenUsingEncryptedRfcommWithServiceRecord(java.lang.String,java.util.UUID)> -> _SOURCE_
+<android.bluetooth.IBluetoothPan$Stub$Proxy: int getConnectionState(android.bluetooth.BluetoothDevice)> -> _SOURCE_
+<com.android.bluetooth.hdp.HealthService: java.util.List lookupHealthDevicesMatchingStates(int[])> -> _SOURCE_
+<android.bluetooth.IBluetoothManager$Stub$Proxy: java.lang.String getAddress()> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: android.bluetooth.BluetoothDevice getRemoteDevice(java.lang.String)> -> _SOURCE_
+
+
+
+% <java.net.URL: java.net.URLConnection openConnection()> -> _SOURCE_
+% <java.net.URLConnection: java.io.OutputStream getOutputStream()> -> _SOURCE_
+% <java.net.URLConnection: java.io.InputStream getInputStream()> -> _SOURCE_
+
+% <org.apache.http.HttpResponse: org.apache.http.HttpEntity getEntity()> -> _SOURCE_
+% <org.apache.http.util.EntityUtils: java.lang.String toString(org.apache.http.HttpEntity)> -> _SOURCE_
+% <org.apache.http.util.EntityUtils: java.lang.String toString(org.apache.http.HttpEntity,java.lang.String)> -> _SOURCE_
+% <org.apache.http.util.EntityUtils: byte[] toByteArray(org.apache.http.HttpEntity)> -> _SOURCE_
+% <org.apache.http.util.EntityUtils: java.lang.String getContentCharSet(org.apache.http.HttpEntity)> -> _SOURCE_
+
+
+
+% add Activity.getIntent() as source instead of the next methods to avoid duplicate results.
+%<android.content.Intent: java.lang.String getAction()> -> _SOURCE_
+%<android.content.Intent: boolean[] getBooleanArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: boolean getBooleanExtra(java.lang.String, boolean)> -> _SOURCE_
+%<android.content.Intent: android.os.Bundle getBundleExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: byte[] getByteArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: byte getByteExtra(java.lang.String, byte)> -> _SOURCE_
+%<android.content.Intent: java.util.Set getCategories()> -> _SOURCE_
+%<android.content.Intent: char[] getCharArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: char getCharExtra(java.lang.String, char)> -> _SOURCE_
+%<android.content.Intent: java.lang.CharSequence[] getCharSequenceArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: java.util.ArrayList getCharSequenceArrayListExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: java.lang.CharSequence getCharSequenceExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: android.content.ClipData getClipData()> -> _SOURCE_
+%<android.content.Intent: android.content.ComponentName getComponent()> -> _SOURCE_
+%<android.content.Intent: android.net.Uri getData()> -> _SOURCE_
+%<android.content.Intent: java.lang.String getDataString()> -> _SOURCE_
+%<android.content.Intent: double[] getDoubleArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: double getDoubleExtra(java.lang.String, double)> -> _SOURCE_
+%<android.content.Intent: android.os.Bundle getExtras()> -> _SOURCE_
+%<android.content.Intent: int getFlags()> -> _SOURCE_
+%<android.content.Intent: float[] getFloatArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: float getFloatExtra(java.lang.String, float)> -> _SOURCE_
+%<android.content.Intent: int[] getIntArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: java.util.ArrayList getIntegerArrayListExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: android.content.Intent getIntent(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: android.content.Intent getIntentOld(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: int getIntExtra(java.lang.String, int)> -> _SOURCE_
+%<android.content.Intent: long[] getLongArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: long getLongExtra(java.lang.String, long)> -> _SOURCE_
+%<android.content.Intent: java.lang.String getPackage()> -> _SOURCE_
+%<android.content.Intent: android.os.Parcelable[] getParcelableArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: java.util.ArrayList getParcelableArrayListExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: android.os.Parcelable getParcelableExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: java.lang.String getScheme()> -> _SOURCE_
+%<android.content.Intent: android.content.Intent getSelector()> -> _SOURCE_
+%<android.content.Intent: java.io.Serializable getSerializableExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: short[] getShortArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: short getShortExtra(java.lang.String, short)> -> _SOURCE_
+%<android.content.Intent: android.graphics.Rect getSourceBounds()> -> _SOURCE_
+%<android.content.Intent: java.lang.String[] getStringArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: java.util.ArrayList getStringArrayListExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: java.lang.String getStringExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: java.lang.String getType()> -> _SOURCE_
+
+%<android.content.Intent: void <init>()> -> _SOURCE_
+%<android.content.Intent: void <init>(android.content.Intent)> -> _SOURCE_
+%<android.content.Intent: void <init>(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: void <init>(java.lang.String,android.net.Uri)> -> _SOURCE_
+%<android.content.Intent: void <init>(android.content.Context,java.lang.Class)> -> _SOURCE_
+%<android.content.Intent: void <init>(java.lang.String,android.net.Uri,android.content.Context,java.lang.Class)> -> _SOURCE_
+
+%bundle sources
+% <android.os.Bundle: java.lang.Object get(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: boolean getBoolean(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: boolean getBoolean(java.lang.String,boolean)> -> _SOURCE_
+% <android.os.Bundle: boolean[] getBooleanArray(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: android.os.Bundle getBundle(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: byte getByte(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: java.lang.Byte getByte(java.lang.String,byte)> -> _SOURCE_
+% <android.os.Bundle: byte[] getByteArray(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: char getChar(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: char getChar(java.lang.String,char)> -> _SOURCE_
+% <android.os.Bundle: char[] getCharArray(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: java.lang.CharSequence getCharSequence(java.lang.String,java.lang.CharSequence)> -> _SOURCE_
+% <android.os.Bundle: java.lang.CharSequence getCharSequence(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: java.lang.CharSequence[] getCharSequenceArray(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: java.util.ArrayList getCharSequenceArrayList(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: java.lang.ClassLoader getClassLoader()> -> _SOURCE_
+% <android.os.Bundle: double getDouble(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: double getDouble(java.lang.String,double)> -> _SOURCE_
+% <android.os.Bundle: double[] getDoubleArray(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: float getFloat(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: float getFloat(java.lang.String,float)> -> _SOURCE_
+% <android.os.Bundle: float[] getFloatArray(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: int getInt(java.lang.String,int)> -> _SOURCE_
+% <android.os.Bundle: int getInt(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: int[] getIntArray(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: java.util.ArrayList getIntegerArrayList(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: long getLong(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: long getLong(java.lang.String,long)> -> _SOURCE_
+% <android.os.Bundle: long[] getLongArray(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: android.os.Parcelable getParcelable(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: android.os.Parcelable[] getParcelableArray(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: java.util.ArrayList getParcelableArrayList(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: java.io.Serializable getSerializable(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: short getShort(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: short getShort(java.lang.String,short)> -> _SOURCE_
+% <android.os.Bundle: short[] getShortArray(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: android.util.SparseArray getSparseParcelableArray(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: java.lang.String getString(java.lang.String)> -> _SOURCE_
+% <android.os.Bundle: java.util.ArrayList getStringArrayList(java.lang.String key)> -> _SOURCE_
+
+
+% <android.app.PendingIntent: android.app.PendingIntent getActivity(android.content.Context,int,android.content.Intent,int)> -> _SOURCE_
+% <android.app.PendingIntent: android.app.PendingIntent getActivity(android.content.Context,int,android.content.Intent,int,android.os.Bundle)> -> _SOURCE_
+% <android.app.PendingIntent: android.app.PendingIntent getBroadcast(android.content.Context,int,android.content.Intent,int)> -> _SOURCE_
+% <android.app.PendingIntent: android.app.PendingIntent getService(android.content.Context,int,android.content.Intent,int)> -> _SOURCE_
+

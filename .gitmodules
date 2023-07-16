@@ -1,0 +1,9 @@
+[submodule "platforms"]
+	path = platforms
+	url = https://github.com/Sable/android-platforms
+[submodule "native_summary_java"]
+	path = native_summary_java
+	url = git@github.com:NativeSummary/native_summary_java.git
+[submodule "native_summary_bai"]
+	path = native_summary_bai
+	url = git@github.com:NativeSummary/native_summary_bai.git
