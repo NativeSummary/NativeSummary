@@ -14,27 +14,18 @@ RUN if [[ ! -z "$UBUNTU_MIRROR" ]] ; then sed -i "s/archive.ubuntu.com/$UBUNTU_M
  && sed -i "s/security.ubuntu.com/$UBUNTU_MIRROR/g" /etc/apt/sources.list ; fi ; \
  apt update && DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends wget unzip 7zip sudo software-properties-common nano python3-pip openjdk-11-jdk-headless maven gradle \
  && if [[ ! -z "$PYTHON_MIRROR" ]] ; then python3 -m pip config set global.index-url https://$PYTHON_MIRROR/simple ; fi ; \
- apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ python3 -m pip install pyelftools androguard \
+ && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR /root
 
-ARG GHIDRA_PATH="https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.1.2_build/ghidra_10.1.2_PUBLIC_20220125.zip"
-ADD ${GHIDRA_PATH} /opt/ghidra.zip
-RUN unzip /opt/ghidra.zip -d /opt && rm /opt/ghidra.zip
-ENV GHIDRA_INSTALL_DIR=/opt/ghidra_10.1.2_PUBLIC
+ENV GHIDRA_INSTALL_DIR=/root/ghidra_10.1.2_PUBLIC
 
-COPY . /root/
+COPY root/ /root/
 
-RUN rm -f ghidra*.zip \
-    && cd /root/pre_analysis_py \
-    && python3 setup.py develop \
-    && python3 -m pip install -r requirements-new.txt \
-    && cd /root/native_summary_java \
-    && mvn package \
-    && cd /root/native_summary_bai \
-    && mkdir -p ~/.gradle && echo "GHIDRA_INSTALL_DIR=$GHIDRA_INSTALL_DIR" >> ~/.gradle/gradle.properties \
-    && bash ./auto-install.sh
+RUN python3 -m pip install -r /root/pre_analysis/requirements.txt \
+    && mkdir -p ~/.ghidra/.ghidra_10.1.2_PUBLIC/Extensions/ \
+    && unzip /root/ghidra_10.1.2_PUBLIC_native_summary_bai.zip -d ~/.ghidra/.ghidra_10.1.2_PUBLIC/Extensions/
 
 WORKDIR /root
 ENTRYPOINT [ "/usr/bin/python3", "main.py" ]
-

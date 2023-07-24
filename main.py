@@ -3,6 +3,7 @@
 import sys
 import subprocess
 import os
+import time
 
 # set PYTHON3c=python
 # set JAVA=C:\Program Files\Java\jdk-13\bin\java.exe
@@ -40,7 +41,7 @@ possible commands:
 
 def run_command(args):
     print(' '.join(args))
-    subprocess.run(args)
+    return subprocess.run(args)
 
 def run_and_save_output(args, log_file):
     print(' '.join(args))
@@ -57,26 +58,39 @@ def run_and_save_output(args, log_file):
 
 
 def pre_analysis(*args, log_file=None):
+    start = time.time()
     if log_file:
-        return run_and_save_output([python3_path, "-m", "native_summary.pre_analysis.bai"]+list(args), log_file)
+        ret = run_and_save_output([python3_path, "/root/preana.py"] + list(args), log_file)
     else:
-        return run_command([python3_path, "-m", "native_summary.pre_analysis.bai"]+list(args))
+        ret = run_command([python3_path, "/root/preana.py"] + list(args))
+    print(f"pre_analysis took {time.time() - start}s.")
+    return ret
 
 # "C:\Users\xxx\NativeFlowBenchPreAnalysis32\native_complexdata.native_summary\project" "native_summary" -import "C:\Users\xxx\NativeFlowBenchPreAnalysis32\native_complexdata.native_summary\libdata.so" "-postScript" "NativeSummary"
-def binary_analysis(*args):
-    runner_path = os.path.join(project_root, "native_summary_bai", "runner.py")
-    return run_command([python3_path, runner_path]+list(args))
+def binary_analysis(*args, log_file=None):
+    start = time.time()
+    runner_path = os.path.join(project_root, "runner.py")
+    if log_file:
+        ret = run_and_save_output([python3_path, runner_path]+list(args), log_file)
+    else:
+        ret = run_command([python3_path, runner_path]+list(args))
+    print(f"binary_analysis took {time.time() - start}s.")
+    return ret
 
 def java_analysis(*args, log_file=None):
-    jar_path = os.path.join(project_root, "native_summary_java", "target", "native_summary-1.0-SNAPSHOT.jar")
+    start = time.time()
+    jar_path = os.path.join(project_root, "native_summary-1.0-SNAPSHOT.jar")
     if log_file:
-        return run_and_save_output([java_path, "-jar", jar_path]+list(args), log_file)
+        ret = run_and_save_output([java_path, "-jar", jar_path]+list(args), log_file)
     else:
-        return run_command([java_path, "-jar", jar_path]+list(args))
+        ret = run_command([java_path, "-jar", jar_path]+list(args))
+    print(f"java_analysis took {time.time() - start}s.")
+    return ret
 
 def analyze(*args):
+    start = time.time()
     import argparse
-    parser = argparse.ArgumentParser(description=f'NativeSummary project - single apk analysis')
+    parser = argparse.ArgumentParser(description=f'NativeSummary project - docker entrypoint')
     parser.add_argument('--apk', type=str, default='/apk', help='apk path')
     parser.add_argument('--out', type=str, default='/out', help='output path')
     parser.add_argument('--process', default=1, type=int, help="multiprocessing process count. default: 1 (single process)")
@@ -92,10 +106,11 @@ def analyze(*args):
         os.makedirs(out_path, exist_ok=True)
     path1 = os.path.join(out_path, "pre_analysis.log")
     pre_analysis(input_path, out_path, "--process", process, log_file=path1)
-    binary_analysis(out_path, '--process', process)
+    path3 = os.path.join(out_path, "ghidra_runner.log")
+    binary_analysis(out_path, '--process', process, log_file=path3)
     path2 = os.path.join(out_path, "java_analysis.log")
     java_analysis(input_path, out_path, platforms, "--out", apk_out_path, "--debug-jimple", log_file=path2)
-
+    print("NativeSummary docker script running time: " + str(time.time() - start))
 
 if __name__ == '__main__':
     main()
