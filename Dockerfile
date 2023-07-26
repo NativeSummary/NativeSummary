@@ -12,7 +12,7 @@ SHELL ["/bin/bash", "-c"]
 # openjdk-8-jdk
 RUN if [[ ! -z "$UBUNTU_MIRROR" ]] ; then sed -i "s/archive.ubuntu.com/$UBUNTU_MIRROR/g" /etc/apt/sources.list \
  && sed -i "s/security.ubuntu.com/$UBUNTU_MIRROR/g" /etc/apt/sources.list ; fi ; \
- apt update && DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends wget unzip 7zip sudo software-properties-common nano python3-pip openjdk-11-jdk-headless maven gradle \
+ apt update && DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends time wget unzip 7zip sudo software-properties-common nano python3-pip openjdk-11-jdk-headless \
  && if [[ ! -z "$PYTHON_MIRROR" ]] ; then python3 -m pip config set global.index-url https://$PYTHON_MIRROR/simple ; fi ; \
  python3 -m pip install pyelftools androguard \
  && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -28,4 +28,4 @@ RUN python3 -m pip install -r /root/pre_analysis/requirements.txt \
     && unzip /root/ghidra_10.1.2_PUBLIC_native_summary_bai.zip -d ~/.ghidra/.ghidra_10.1.2_PUBLIC/Extensions/
 
 WORKDIR /root
-ENTRYPOINT [ "/usr/bin/python3", "main.py" ]
+ENTRYPOINT [ "/usr/bin/bash", "timeout.sh" ]

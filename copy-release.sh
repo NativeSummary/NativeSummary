@@ -40,3 +40,4 @@ fi
 cp $SCRIPTPATH/native_summary_bai/runner.py $SCRIPTPATH/root/
 cp $SCRIPTPATH/README.md $SCRIPTPATH/root/
 cp $SCRIPTPATH/main.py $SCRIPTPATH/root/
+cp $SCRIPTPATH/timeout.sh $SCRIPTPATH/root/timeout.sh

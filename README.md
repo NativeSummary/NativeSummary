@@ -16,25 +16,26 @@ main projects layout for this organization account:
 
 ## Docker
 
-### Quick Start
+the docker image is publicly available at https://hub.docker.com/u/nativesummary
 
-Download `ns.7z` in release, extract and get the tar file, load it to docker using `docker load -i ns.tar`.
+### Quick Start
 
 mount apk or a folder containing apk files as /apk. create a output folder and mount to `/out`. (the repacked apk is under `/out/repacked_apks/`)
 
-1. analyze single apk file:
+1. analyze single apk file: (recommended)
     ```bash
-    docker run --rm -it -v /dataset/nfbe/native_handle-release-unsigned.apk:/apk -v /nfbe-results/native_handle-release-unsigned.apk:/out ns
+    docker run --rm -it -v /dataset/nfbe/native_handle-release-unsigned.apk:/apk -v /nfbe-results/native_handle-release-unsigned.apk:/out nativesummary/nativesummary
     ```
 1. analyze apk files in a folder
     ```bash
-    docker run --rm -it -v /dataset/nfbe:/apk -v /nfbe-results:/out ns
+    docker run --rm -it -v /dataset/nfbe:/apk -v /nfbe-results:/out nativesummary/nativesummary
     ```
-1. get a shell. you can modify source code, build, run.
+1. get a shell.
     ```bash
-    docker run -it -v -v /dataset/nfbe:/apk -v /nfbe-results:/out --entrypoint /bin/bash ns
+    docker run -it -v -v /dataset/nfbe:/apk -v /nfbe-results:/out --entrypoint /bin/bash nativesummary/nativesummary
     ```
 
+use `NS_TIMEOUT` to limit the running time of the whole analysis. the value is directly passed to `timeout`. for example: `NS_TIMEOUT=2h`
 use `GHIDRA_NS_ARGS` env variable to pass arguments to ghidra scripts.
 use `NS_PREFER_32=True` to prefer select 32bit arm.
 use `NS_SELECT_ARCH` to directly select an arch. (must in ['arm64-v8a', 'armeabi-v7a', 'armeabi'])
