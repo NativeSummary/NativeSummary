@@ -11,6 +11,32 @@ the docker images is publicly available at https://hub.docker.com/u/nativesummar
 - Jucify [Docker Image](https://hub.docker.com/r/nativesummary/jucify) [Modified Source](https://github.com/NativeSummary/JuCify)
 
 
+## Introduction
+
+NativeSummary is capable of discovering behaviors in native code of android apps.
+
+**Root Detection**: searching for "su" executable in native code:
+
+![](imgs/sample-rootdetect.png)
+
+![](imgs/sample-rootdetect-java.png)
+
+**Stack Trace Detection**: get stack trace in native code:
+
+![](imgs/sample-stacktrace.png)
+
+NativeSummary is also capable of lift some native code behaviors to bytecode level:
+
+**dataflow**
+
+![](imgs/complex_data.png)
+
+**return string constants**
+
+![](imgs/ir-sample1.png)
+
+![](imgs/strconst.png)
+
 ### Quick Start
 
 mount apk or a folder containing apk files as /apk. create a output folder and mount to `/out`. (the repacked apk is under `/out/repacked_apks/`)
@@ -26,8 +52,9 @@ Two different way to use this docker container:
     ```
 
 **Envrionment Variables**
-- use `NS_TIMEOUT` to limit the running time of the whole analysis. the value is directly passed to `timeout`. for example: `NS_TIMEOUT=2h`
+- use `NS_TIMEOUT` to limit the running time of the whole analysis. the value is directly passed to [`timeout`](https://man7.org/linux/man-pages/man1/timeout.1.html). for example: `NS_TIMEOUT=2h`
 - use `GHIDRA_NS_ARGS` env variable to pass arguments to ghidra scripts.
+    - To set timout for each analyzed native method: `-e GHIDRA_NS_ARGS="@@-timeout 1000"`
 - use `NS_PREFER_32=True` to prefer 32-bit arm binary.
 - use `NS_SELECT_ARCH` to directly select an arch. (must in ['arm64-v8a', 'armeabi-v7a', 'armeabi'])
 
