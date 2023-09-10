@@ -28,6 +28,8 @@ cp $SCRIPTPATH/native_summary_java/target/native_summary-1.0-SNAPSHOT.jar $SCRIP
 rm -r $SCRIPTPATH/native_summary_bai/pre_analysis/__pycache__ 2> /dev/null || true
 cp -r $SCRIPTPATH/native_summary_bai/pre_analysis $SCRIPTPATH/root/
 cp $SCRIPTPATH/native_summary_bai/preana.py $SCRIPTPATH/root/
+# a big testcase
+rm $SCRIPTPATH/root/pre_analysis/test_symbol_parser_full.json
 
 # copy platforms folder (big)
 if [ ! -e "$SCRIPTPATH/root/platforms" ]; then
@@ -41,3 +43,10 @@ cp $SCRIPTPATH/native_summary_bai/runner.py $SCRIPTPATH/root/
 cp $SCRIPTPATH/README.md $SCRIPTPATH/root/
 cp $SCRIPTPATH/main.py $SCRIPTPATH/root/
 cp $SCRIPTPATH/timeout.sh $SCRIPTPATH/root/timeout.sh
+
+# flowdroid
+if [ ! -e "$SCRIPTPATH/root/flowdroid.jar" ]; then
+  wget https://repo1.maven.org/maven2/de/fraunhofer/sit/sse/flowdroid/soot-infoflow-cmd/2.11.1/soot-infoflow-cmd-2.11.1-jar-with-dependencies.jar --output-document=$SCRIPTPATH/root/flowdroid.jar
+fi
+cp $SCRIPTPATH/ss_taintbench.txt $SCRIPTPATH/root/ss.txt
+cp $SCRIPTPATH/scripts/run_flowdroid.sh $SCRIPTPATH/root/run_flowdroid.sh

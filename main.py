@@ -13,6 +13,9 @@ java_path = os.getenv("JAVA", default='/usr/bin/java')
 # java8_path = os.getenv("JAVA8", default='/usr/lib/jvm/java-8-openjdk-amd64/bin/java')
 cmd = sys.argv[1] if len(sys.argv) >= 2 else None
 args = sys.argv[2:] if len(sys.argv) >= 2 else []
+if cmd is not None and cmd[0] == '-':
+    args = [cmd] + args
+    cmd = None
 
 project_root = os.path.dirname(os.path.realpath(__file__))
 
@@ -51,6 +54,7 @@ def run_and_save_output(args, log_file):
             data = proc.stdout.readline()
             if not data:
                 break
+            # write to both stdout and file.
             sys.stdout.write(data)
             sys.stdout.flush()
             f.write(data)
@@ -58,33 +62,27 @@ def run_and_save_output(args, log_file):
 
 
 def pre_analysis(*args, log_file=None):
-    start = time.time()
     if log_file:
-        ret = run_and_save_output([python3_path, "/root/preana.py"] + list(args), log_file)
+        ret = run_and_save_output(["/usr/bin/time", "-v", python3_path, "/root/preana.py"] + list(args), log_file)
     else:
-        ret = run_command([python3_path, "/root/preana.py"] + list(args))
-    print(f"pre_analysis took {time.time() - start}s.")
+        ret = run_command(["/usr/bin/time", "-v", python3_path, "/root/preana.py"] + list(args))
     return ret
 
 # "C:\Users\xxx\NativeFlowBenchPreAnalysis32\native_complexdata.native_summary\project" "native_summary" -import "C:\Users\xxx\NativeFlowBenchPreAnalysis32\native_complexdata.native_summary\libdata.so" "-postScript" "NativeSummary"
 def binary_analysis(*args, log_file=None):
-    start = time.time()
     runner_path = os.path.join(project_root, "runner.py")
     if log_file:
-        ret = run_and_save_output([python3_path, runner_path]+list(args), log_file)
+        ret = run_and_save_output(["/usr/bin/time", "-v", python3_path, runner_path]+list(args), log_file)
     else:
-        ret = run_command([python3_path, runner_path]+list(args))
-    print(f"binary_analysis took {time.time() - start}s.")
+        ret = run_command(["/usr/bin/time", "-v", python3_path, runner_path]+list(args))
     return ret
 
 def java_analysis(*args, log_file=None):
-    start = time.time()
     jar_path = os.path.join(project_root, "native_summary-1.0-SNAPSHOT.jar")
     if log_file:
-        ret = run_and_save_output([java_path, "-jar", jar_path]+list(args), log_file)
+        ret = run_and_save_output(["/usr/bin/time", "-v", java_path, "-jar", jar_path]+list(args), log_file)
     else:
-        ret = run_command([java_path, "-jar", jar_path]+list(args))
-    print(f"java_analysis took {time.time() - start}s.")
+        ret = run_command(["/usr/bin/time", "-v", java_path, "-jar", jar_path]+list(args))
     return ret
 
 def analyze(*args):
@@ -93,9 +91,8 @@ def analyze(*args):
     parser = argparse.ArgumentParser(description=f'NativeSummary project - docker entrypoint')
     parser.add_argument('--apk', type=str, default='/apk', help='apk path')
     parser.add_argument('--out', type=str, default='/out', help='output path')
-    parser.add_argument('--process', default=1, type=int, help="multiprocessing process count. default: 1 (single process)")
-    # parser.add_argument('--redo', default=False, help="delete previous result and redo analysis", action='store_true')
-    # parser.add_argument('--delete', default=False, help="not perform analysis, but delete all analysis results", action='store_true')
+    parser.add_argument('--process', default=1, type=int, help="multiprocessing process count. default: 1 (single process) (depricated)")
+    parser.add_argument('--taint', action='store_true', help="run flowdroid after the analysis")
     args = parser.parse_args(args)
     input_path = args.apk
     out_path = args.out
@@ -111,6 +108,8 @@ def analyze(*args):
     path2 = os.path.join(out_path, "java_analysis.log")
     java_analysis(input_path, out_path, platforms, "--out", apk_out_path, "--debug-jimple", log_file=path2)
     print("NativeSummary docker script running time: " + str(time.time() - start))
+    if args.taint:
+        run_command(["bash", "/root/run_flowdroid.sh", "/out"])
 
 if __name__ == '__main__':
     main()

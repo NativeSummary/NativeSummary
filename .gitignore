@@ -1,3 +1,5 @@
 ghidra_*.zip
 root/
 test1/
+# common
+**/__pycache__

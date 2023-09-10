@@ -12,7 +12,7 @@ SHELL ["/bin/bash", "-c"]
 # openjdk-8-jdk
 RUN if [[ ! -z "$UBUNTU_MIRROR" ]] ; then sed -i "s/archive.ubuntu.com/$UBUNTU_MIRROR/g" /etc/apt/sources.list \
  && sed -i "s/security.ubuntu.com/$UBUNTU_MIRROR/g" /etc/apt/sources.list ; fi ; \
- apt update && DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends time wget unzip 7zip sudo software-properties-common nano python3-pip openjdk-11-jdk-headless \
+ apt update && DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends time wget unzip 7zip sudo software-properties-common nano python3-pip openjdk-17-jdk-headless libxml2-utils \
  && if [[ ! -z "$PYTHON_MIRROR" ]] ; then python3 -m pip config set global.index-url https://$PYTHON_MIRROR/simple ; fi ; \
  python3 -m pip install pyelftools androguard \
  && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

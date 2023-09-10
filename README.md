@@ -47,6 +47,12 @@ Two different way to use this docker container:
     docker run --rm -it -v /dataset/nfbe/native_handle-release-unsigned.apk:/apk -v /nfbe-results/native_handle-release-unsigned.apk:/out nativesummary/nativesummary
     ```
 1. analyze apk files in a folder
+    first modify variables in `scripts/cmds-gen.py`
+    ```bash
+    ./scripts/cmds-gen.py --apk /home/user/ns/dataset/nfb --out /tmp/test1 | sud
+o xargs -0 -I CMD --max-procs=1 bash -c CMD
+    ```
+1. analyze apk files in a folder (depricated)
     ```bash
     docker run --rm -it -v /dataset/nfbe:/apk -v /nfbe-results:/out nativesummary/nativesummary
     ```
