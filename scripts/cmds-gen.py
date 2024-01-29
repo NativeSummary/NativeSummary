@@ -8,11 +8,17 @@ import subprocess
 
 IMAGE_NAME = 'ns'
 # docker_args = '-e NS_TIMEOUT=4h --cpus=1 --memory=32G'
-docker_args = '-e NS_TIMEOUT=4h'
-image_args = '--taint'
+docker_args = '-e NS_TIMEOUT=50m -e BINARY_TIMEOUT=25m'
+image_args = ''
+# image_args = '--taint'
 
-def gen(dataset_path, out_dataset_path, container_name_template="ns-{}"):
-    for file in sorted(os.listdir(dataset_path)):
+def gen(dataset_path, out_dataset_path, container_name_template="ns2-{}"):
+    if not os.path.isfile(dataset_path):
+        dirs = sorted(os.listdir(dataset_path))
+    else:
+        dirs = [os.path.basename(dataset_path)]
+        dataset_path = os.path.dirname(dataset_path)
+    for file in dirs:
         if not file.endswith('.apk'):
             continue
         fpath = os.path.join(dataset_path, file)
