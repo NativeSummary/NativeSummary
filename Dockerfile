@@ -14,7 +14,7 @@ RUN if [[ ! -z "$UBUNTU_MIRROR" ]] ; then sed -i "s/archive.ubuntu.com/$UBUNTU_M
  && sed -i "s/security.ubuntu.com/$UBUNTU_MIRROR/g" /etc/apt/sources.list ; fi ; \
  apt update && DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends time wget unzip 7zip sudo software-properties-common nano python3-pip openjdk-17-jdk-headless libxml2-utils \
  && if [[ ! -z "$PYTHON_MIRROR" ]] ; then python3 -m pip config set global.index-url https://$PYTHON_MIRROR/simple ; fi ; \
- python3 -m pip install pyelftools androguard \
+ python3 -m pip install pyelftools==0.29 androguard==3.3.5 \
  && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR /root
@@ -29,3 +29,7 @@ RUN python3 -m pip install -r /root/pre_analysis/requirements.txt \
 
 WORKDIR /root
 ENTRYPOINT [ "/usr/bin/bash", "timeout.sh" ]
+
+# set default timeout
+ENV NS_TIMEOUT=50m
+ENV BINARY_TIMEOUT=25m

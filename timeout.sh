@@ -6,4 +6,13 @@ stdbuf -e 0 /usr/bin/time -v /usr/bin/timeout --kill-after=60s $TIMEOUT  /usr/bi
 # create an empty file as a flag for finished.
 touch /out/NS_FINISHED
 
+if [[ ! -v CHANGE_UID ]]; then
+    echo "CHANGE_UID is not set"
+elif [[ -z "$CHANGE_UID" ]]; then
+    echo "CHANGE_UID is set to the empty string"
+else
+    echo "CHANGE_UID has the value: $CHANGE_UID"
+    chown $CHANGE_UID:$CHANGE_UID -R /out
+fi
+
 sleep 10s

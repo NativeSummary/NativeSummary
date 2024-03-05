@@ -599,7 +599,7 @@ def generate_answer_audit(temp_dir, dataset_path):
 
 
 if __name__ == '__main__':
-    # unittest.main()
+    unittest.main()
     # generate_answer_audit('/tmp/test_nfb', NFB_DATASET_PATH)
     # generate_answer_audit('/tmp/test_nfbe', NFBE_DATASET_PATH)
     # generate_answer_audit('/tmp/test_jub', JUB_DATASET_PATH)

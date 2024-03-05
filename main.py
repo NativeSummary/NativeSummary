@@ -10,6 +10,7 @@ import time
 # set JAVA8=C:\Program Files\Java\jre1.8.0_341\bin\java.exe
 python3_path = os.getenv("PYTHON3", default='/usr/bin/python3')
 java_path = os.getenv("JAVA", default='/usr/bin/java')
+BINARY_TIMEOUT = os.getenv("BINARY_TIMEOUT", default=None)
 # java8_path = os.getenv("JAVA8", default='/usr/lib/jvm/java-8-openjdk-amd64/bin/java')
 cmd = sys.argv[1] if len(sys.argv) >= 2 else None
 args = sys.argv[2:] if len(sys.argv) >= 2 else []
@@ -71,8 +72,12 @@ def pre_analysis(*args, log_file=None):
 # "C:\Users\xxx\NativeFlowBenchPreAnalysis32\native_complexdata.native_summary\project" "native_summary" -import "C:\Users\xxx\NativeFlowBenchPreAnalysis32\native_complexdata.native_summary\libdata.so" "-postScript" "NativeSummary"
 def binary_analysis(*args, log_file=None):
     runner_path = os.path.join(project_root, "runner.py")
+    cmd_prefix = []
+    if BINARY_TIMEOUT:
+        assert log_file, "BINARY_TIMEOUT set but log_file not set."
+        cmd_prefix = ["/usr/bin/timeout", "--kill-after=60s", BINARY_TIMEOUT]
     if log_file:
-        ret = run_and_save_output(["/usr/bin/time", "-v", python3_path, runner_path]+list(args), log_file)
+        ret = run_and_save_output(["/usr/bin/time", "-v"] + cmd_prefix + [python3_path, runner_path]+list(args), log_file)
     else:
         ret = run_command(["/usr/bin/time", "-v", python3_path, runner_path]+list(args))
     return ret
@@ -82,7 +87,7 @@ def java_analysis(*args, log_file=None):
     if log_file:
         ret = run_and_save_output(["/usr/bin/time", "-v", java_path, "-jar", jar_path]+list(args), log_file)
     else:
-        ret = run_command(["/usr/bin/time", "-v", java_path, "-jar", jar_path]+list(args))
+        ret = run_command(["/usr/bin/time", "-v", java_path, "-Xss4m", "-jar", jar_path]+list(args))
     return ret
 
 def analyze(*args):

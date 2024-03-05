@@ -3,11 +3,14 @@
 <android.telephony.TelephonyManager: java.lang.String getSubscriberId()> -> _SOURCE_
 <android.telephony.TelephonyManager: java.lang.String getDeviceId()> -> _SOURCE_
 <android.telephony.TelephonyManager: java.lang.String getImei()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getMeid()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getMeid(int)> -> _SOURCE_
 
-<android.content.Context: void startActivity(android.content.Intent)> -> _SINK_
-<android.content.Intent: android.content.Intent putExtra(java.lang.String,android.os.Bundle)> -> _SINK_
-<android.content.Intent: java.lang.String getStringExtra(java.lang.String)> -> _SOURCE_
-
+% <android.content.Context: void startActivity(android.content.Intent)> -> _SINK_
+% <android.content.Intent: android.content.Intent putExtra(java.lang.String,android.os.Bundle)> -> _SINK_
+% <android.content.Intent: java.lang.String getStringExtra(java.lang.String)> -> _SOURCE_
+% <android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String[])> -> _SINK_
+% <android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)> -> _SINK_
 
 <android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)> -> _SINK_
 <android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)> -> _SINK_
@@ -18,3 +21,24 @@
 <android.util.Log: int d(java.lang.String,java.lang.String,java.lang.Throwable)> -> _SINK_
 <android.util.Log: int v(java.lang.String,java.lang.String,java.lang.Throwable)> -> _SINK_
 <android.util.Log: int w(java.lang.String,java.lang.Throwable)> -> _SINK_
+
+<android.location.Location: android.location.Location getExtraLocation(java.lang.String)> -> _SOURCE_
+<android.net.wifi.WifiNative: java.lang.String getMacAddress()> -> _SOURCE_
+
+<android.location.Location: double getLatitude()> -> _SOURCE_
+<android.net.wifi.WifiInfo: java.lang.String getMacAddress()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getLine1Number()> -> _SOURCE_
+
+% <okhttp3.Request$Builder: okhttp3.Request post()> -> _SINK_
+<okhttp3.FormBody$Builder: okhttp3.FormBody$Builder add(java.lang.String,java.lang.String)> -> _SINK_
+
+<android.telephony.TelephonyManager: java.lang.String getLine1Number()> -> _SOURCE_
+<android.app.ApplicationPackageManager: java.util.List queryIntentActivities(android.content.Intent,int)> -> _SOURCE_
+<android.content.pm.PackageManager: java.util.List getInstalledPackages(int)> -> _SOURCE_
+
+<android.content.pm.PackageManager: java.util.List queryIntentActivities(android.content.Intent,int)> -> _SOURCE_
+
+<android.database.Cursor: java.lang.String getString(int)> -> _SOURCE_
+% <android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)> -> _SOURCE_
+
+<android.location.LocationManager: android.location.Location getLastKnownLocation(java.lang.String)> -> _SOURCE_

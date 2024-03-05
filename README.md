@@ -57,13 +57,14 @@ o xargs -0 -I CMD --max-procs=1 bash -c CMD
     docker run --rm -it -v /dataset/nfbe:/apk -v /nfbe-results:/out nativesummary/nativesummary
     ```
 
-**Envrionment Variables**
+**Configuration**
 - use `NS_TIMEOUT` to limit the running time of the whole analysis. the value is directly passed to [`timeout`](https://man7.org/linux/man-pages/man1/timeout.1.html). for example: `NS_TIMEOUT=2h`
+- `BINARY_TIMEOUT` set a timeout for the whole binary analysis.
 - use `GHIDRA_NS_ARGS` env variable to pass arguments to ghidra scripts.
     - To set timout for each analyzed native method: `-e GHIDRA_NS_ARGS="@@-timeout 1000"`
 - use `NS_PREFER_32=True` to prefer 32-bit arm binary.
 - use `NS_SELECT_ARCH` to directly select an arch. (must in ['arm64-v8a', 'armeabi-v7a', 'armeabi'])
-
+- to modify souces and sink file, mount to `/root/ss.txt`, for example `-v xxx/ss.txt:/root/ss.txt`
 
 **Result Layout**(folder mode)
 - `/out/repacked_apks` repackaged apk files.

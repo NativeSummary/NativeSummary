@@ -14,5 +14,5 @@ popd
 
 echo root ok
 
-docker image rm ns && \
+docker image rm ns || true
 docker build . --tag ns --build-arg UBUNTU_MIRROR=mirrors.ustc.edu.cn --build-arg PYTHON_MIRROR=pypi.tuna.tsinghua.edu.cn
