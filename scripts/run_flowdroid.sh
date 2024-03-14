@@ -22,8 +22,29 @@ then
     exit 0
 fi
 
-# copy
-cp $1/repacked_apks/apk $1/repacked_apks/apk.apk
+timeflag=""
+
+if [[ ! -z "${FLOWDROID_TIMEOUT}" ]]; then
+    timeflag+=" --timeout $FLOWDROID_TIMEOUT"
+fi
+
+if [[ ! -z "${FLOWDROID_CALLBACK_TIMEOUT}" ]]; then
+    timeflag+=" --callbacktimeout $FLOWDROID_CALLBACK_TIMEOUT"
+fi
+
+if [[ -z "${FLOWDROID_RESULT_TIMEOUT}" ]]; then
+    timeflag+=" --resulttimeout 600"
+else
+    timeflag+=" --resulttimeout $FLOWDROID_RESULT_TIMEOUT"
+fi
+
+if [[ ! -z "${timeflag}" ]]; then
+    echo flowdroid timeout flags: $timeflag
+fi
+
+
+# make suffix .apk
+mv $1/repacked_apks/apk $1/repacked_apks/apk.apk && ln -s ./apk.apk $1/repacked_apks/apk
 cp $SS $1/repacked_apks/sources-sinks.txt
 cat $1/repacked_apks/apk.sinks.txt >> $1/repacked_apks/sources-sinks.txt
 SS=$1/repacked_apks/sources-sinks.txt
@@ -34,7 +55,7 @@ SS=$1/repacked_apks/sources-sinks.txt
 /usr/bin/time -v java -jar /root/flowdroid.jar \
 --mergedexfiles --pathreconstructionmode PRECISE \
 -s $SS \
--p /root/platforms -o $1/repacked_apks/fd.xml -a $1/repacked_apks/apk.apk \
+-p /root/platforms -o $1/repacked_apks/fd.xml -a $1/repacked_apks/apk.apk $timeflag \
  1> $1/repacked_apks/fd.stdout.txt 2> $1/repacked_apks/fd.stderr.txt
 
 xmllint --format $1/repacked_apks/fd.xml -o $1/repacked_apks/fd.xml

@@ -46,6 +46,7 @@ cp $SCRIPTPATH/timeout.sh $SCRIPTPATH/root/timeout.sh
 
 # flowdroid
 if [ ! -e "$SCRIPTPATH/root/flowdroid.jar" ]; then
+  # wget https://repo1.maven.org/maven2/de/fraunhofer/sit/sse/flowdroid/soot-infoflow-cmd/2.10.0/soot-infoflow-cmd-2.10.0-jar-with-dependencies.jar --output-document=$SCRIPTPATH/root/flowdroid.jar
   wget https://repo1.maven.org/maven2/de/fraunhofer/sit/sse/flowdroid/soot-infoflow-cmd/2.11.1/soot-infoflow-cmd-2.11.1-jar-with-dependencies.jar --output-document=$SCRIPTPATH/root/flowdroid.jar
 fi
 cp $SCRIPTPATH/ss_taintbench.txt $SCRIPTPATH/root/ss.txt
