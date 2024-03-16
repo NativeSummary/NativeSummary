@@ -113,8 +113,8 @@ def analyze(*args):
     path2 = os.path.join(out_path, "java_analysis.log")
     java_analysis(input_path, out_path, platforms, "--out", apk_out_path, "--debug-jimple", log_file=path2)
     print("NativeSummary docker script running time: " + str(time.time() - start))
-    if args.taint:
-        run_command(["bash", "/root/run_flowdroid.sh", "/out"])
+    # if args.taint:
+    #     run_command(["bash", "/root/run_flowdroid.sh", "/out"])
 
 if __name__ == '__main__':
     main()

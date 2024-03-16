@@ -20,5 +20,9 @@ if [[ ! -z "$GHIDRA_PROJECT_OWNER" ]]; then
     sed -i "s/root/$GHIDRA_PROJECT_OWNER/" /out/project/native_summary.rep/project.prp
 fi
 
+if [[ "$@" == *"--taint"* ]]; then
+    echo Run flowdroid!
+    bash /root/run_flowdroid.sh /out
+fi
 
 sleep 10s
