@@ -15,4 +15,10 @@ else
     chown $CHANGE_UID:$CHANGE_UID -R /out
 fi
 
+if [[ ! -z "$GHIDRA_PROJECT_OWNER" ]]; then
+    echo "Changing ghidra project owner to: $GHIDRA_PROJECT_OWNER"
+    sed -i "s/root/$GHIDRA_PROJECT_OWNER/" /out/project/native_summary.rep/project.prp
+fi
+
+
 sleep 10s

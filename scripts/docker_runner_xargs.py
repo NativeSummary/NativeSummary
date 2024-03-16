@@ -9,7 +9,8 @@ def get_ns_docker_command(apk_path: str, result_dir: str, apk_name=None, timeout
                           container_name_template="ns-{}", run_flowdroid=False,
                           change_uid=True, selected_arch=None, perfer_32=False, no_opt=False,
                           no_model=False, call_string_k=None, k_set_k=None, binary_jni_timeout=None,
-                          flowdroid_timeout=None, flowdroid_callback_timeout=None, flowdroid_result_timeout=None) -> str:
+                          flowdroid_timeout=None, flowdroid_callback_timeout=None, flowdroid_result_timeout=None,
+                          ghidra_project_owner=None) -> str:
     '''Returns the docker command to analyze an apk.
 
     Keyword arguments:
@@ -34,6 +35,8 @@ def get_ns_docker_command(apk_path: str, result_dir: str, apk_name=None, timeout
         docker_args += f' -e NS_TIMEOUT={timeout}'
     if ss_file is not None:
         docker_args += f' -v {ss_file}:/root/ss.txt'
+    if ghidra_project_owner is not None:
+        docker_args += f' -e GHIDRA_PROJECT_OWNER={ghidra_project_owner}'
     # run taint analysis
     if run_flowdroid:
         image_args += ' --taint'
@@ -91,7 +94,8 @@ def ns_analyze_dataset_xargs(dataset_path, out_dataset_path, print_for_xargs=Tru
                              run_flowdroid=False, change_uid=True, selected_arch=None,
                              perfer_32=False, no_opt=False, no_model=False,
                              call_string_k=None, k_set_k=None, binary_jni_timeout=None,
-                             flowdroid_timeout=None, flowdroid_callback_timeout=None, flowdroid_result_timeout=None):
+                             flowdroid_timeout=None, flowdroid_callback_timeout=None, flowdroid_result_timeout=None,
+                             ghidra_project_owner=None):
     '''
     print_for_xargs: if true, print the commands with separator '\x00'
     '''
@@ -115,7 +119,7 @@ def ns_analyze_dataset_xargs(dataset_path, out_dataset_path, print_for_xargs=Tru
                 os.makedirs(result_dir)
             run_cmd = get_ns_docker_command(fpath, result_dir, ss_file=ss_file, container_name_template=container_name_template, run_flowdroid=run_flowdroid, change_uid=change_uid, timeout=timeout, max_cpu=max_cpu, max_mem=max_mem,
                                             binary_timeout=binary_timeout, selected_arch=selected_arch, perfer_32=perfer_32, no_opt=no_opt, no_model=no_model, call_string_k=call_string_k, k_set_k=k_set_k, binary_jni_timeout=binary_jni_timeout,
-                                            flowdroid_timeout=flowdroid_timeout, flowdroid_callback_timeout=flowdroid_callback_timeout, flowdroid_result_timeout=flowdroid_result_timeout)
+                                            flowdroid_timeout=flowdroid_timeout, flowdroid_callback_timeout=flowdroid_callback_timeout, flowdroid_result_timeout=flowdroid_result_timeout, ghidra_project_owner=ghidra_project_owner)
             cmds.append(run_cmd+';')
             if print_for_xargs:
                 print(run_cmd, end=';')
@@ -153,6 +157,8 @@ if __name__ == '__main__':
     parser.add_argument('--flowdroid_timeout', default=None, help='flowdroid dataflow analysis timeout')
     parser.add_argument('--flowdroid_callback_timeout', default=None, help='flowdroid callback callgraph analysis timeout')
     parser.add_argument('--flowdroid_result_timeout',
+                        default=None, help='flowdroid result collection timeout')
+    parser.add_argument('--ghidra_project_owner', nargs='?', const=os.getlogin(),
                         default=None, help='flowdroid result collection timeout')
     args = parser.parse_args(sys.argv[1:])
     kwargs = vars(args)
