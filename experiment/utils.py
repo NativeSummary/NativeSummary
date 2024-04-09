@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import pickle, re, os,sqlite3,json
+import pickle, re, os,sqlite3,json,sys
 
 ## ========= match statictics using unix `time` command
 
@@ -47,9 +47,31 @@ def dump_obj(path, data):
     with open(path, "wb") as f:
         pickle.dump(data, f)
 
+from pprint import PrettyPrinter
+
+class NoStringWrappingPrettyPrinter(PrettyPrinter):
+    def _format(self, object, *args):
+        if isinstance(object, str):
+            width = self._width
+            self._width = sys.maxsize
+            try:
+                super()._format(object, *args)
+            finally:
+                self._width = width
+        else:
+            super()._format(object, *args)
+
+def pprint_obj(path, obj):
+    with open(path, 'w') as f:
+        f.write(NoStringWrappingPrettyPrinter().pformat(obj))
+
 def write_file(path, content):
     with open(path, 'w') as f:
         f.write(content)
+
+def write_json_file(path, obj):
+    with open(path, 'w') as f:
+        json.dump(obj, f)
 
 def read_file(path):
     with open(path, 'r') as f:
@@ -74,6 +96,21 @@ def match_in_file(pat, path):
 def match_in_file_bytes(pat, path):
     import re
     return re.findall(pat, read_file_bytes(path), re.MULTILINE)
+
+def flatten_dict_list(obj):
+    ret = []
+    for key, arr in obj.items():
+        for val in arr:
+            ret.append((key, val))
+    return ret
+
+def random_sample_dict(d, count):
+    import random
+    out = {}
+    for i in random.sample(list(d), count):
+        out[i] = d[i]
+    return out
+
 
 ## ======= other ==========
 
@@ -132,3 +169,83 @@ def get_so_times(fp):
         if file.endswith('.so.txt'):
             result[file.removesuffix('.txt')] = get_so_time_one(os.path.join(fp, file))
     return result
+
+def multiline_input():
+    contents = []
+    while True:
+        try:
+            line = input()
+        except EOFError:
+            break
+        contents.append(line)
+    return '\n'.join(contents)
+
+
+def dialog_input(title='title', prompt='input', default=None):
+    """
+    Example:
+    >>> strinput("RIG CONFIG", "Insert RE com port:", default="COM")
+    """
+    import tkinter as tk
+    from tkinter import simpledialog
+    root = tk.Tk()
+    root.withdraw()
+    ans = simpledialog.askstring(title, prompt, initialvalue=default)
+    return ans
+
+class TextInputPopup:
+    def __init__(self, root):
+        import tkinter as tk
+        self.root = root
+        self.root.title("Input")
+        self.user_input = ""
+
+        # 创建一个 Text 组件用于多行文本输入
+        self.text = tk.Text(self.root, height=10, width=50)
+        self.text.pack()
+
+        # 创建一个确定按钮，当点击时会调用 self.close 方法
+        self.button = tk.Button(self.root, text="Confirm", command=self.close)
+        self.button.pack()
+
+    def close(self):
+        # 获取 Text 组件中的所有文本并去除尾部的换行符
+        self.user_input = self.text.get("1.0", "end-1c")
+        self.root.destroy()
+
+    def show(self):
+        self.root.mainloop()
+        return self.user_input  # 返回用户输入的内容
+
+def dialog_input_multiline():
+    import tkinter as tk
+    root = tk.Tk()
+    popup = TextInputPopup(root)
+    user_input = popup.show()
+    return user_input
+
+
+def vscode_input(path,prompt, default = None):
+    print(prompt)
+    if default is not None:
+        write_file(path, default)
+    else:
+        # truncate
+        os.system(f"> {path}")
+    os.system(f"code -r -w {path}")
+    return read_file(path)
+
+def open_in_vscode(path):
+    os.system(f"code -r {path}")
+
+def input_with_default(prompt, default):
+    res = input(prompt)
+    if len(res.strip()) == 0:
+        return default
+    return res
+
+def input_sth(prompt):
+    res = ''
+    while len(res.strip()) <= 0:
+        res = input(prompt)
+    return res.strip()

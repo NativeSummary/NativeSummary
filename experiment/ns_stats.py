@@ -120,7 +120,7 @@ class NSStats:
         '''
         ana, t = parse_ns_edges_analyzed(self.result_path)
         jimp = os.path.join(self.result_path, '02-built-bodies.jimple')
-        m, p, c, con =parse_ns_edges(jimp)
+        m, p, c, con =parse_jimple_edges_count(read_file(jimp))
         return ana, m, c+con, c+con
     @cached_property
     def jni_times(self):
@@ -135,9 +135,45 @@ class NSStats:
         '''
         # assume the apk name is the result folder name
         apk_name = os.path.dirname(self.result_path)
-        return len(get_native_flow(self.result_path, apk_name, NSStats.native_methods))
-    
+        return len(get_native_flow(f'{self.result_path}/repacked_apks/fd.xml', apk_name, NSStats.native_methods))
+    # ========jimple and IR============
+    @cached_property
+    def jimple_path(self):
+        return f'{self.result_path}/02-built-bodies.jimple'
+    @cached_property
+    def summary_ir_paths(self):
+        return [i for i in listdir(self.result_path) if i.endswith('.ll')]
+    @cached_property
+    def jimple_funcs(self):
+        jimple = read_file(self.jimple_path)
+        formated = jimple.replace('\n\n', '\n')
+        funcs = formated.split('}\n')[:-1]
+        return [f + '}' for f in funcs]
+    @cached_property
+    def summary_ir_funcs(self):
+        result = {}
+        for file in self.summary_ir_paths:
+            ir = read_file(file)
+            formated = re.sub(r'\s+;.*', '', ir)
+            funcs = formated.split('\ndefine ')[1:]
+            result[os.path.basename(file)] = funcs
+        return result
 
+def is_ir_func(func, func_name):
+    '''
+    check if this ir func string's func name is func_name
+    '''
+    return func_name + '(' in func.split('\n')[0]
+
+def is_jimple_func(jimple, func_name):
+    '''
+    check if this jimple func string's func name is func_name
+    '''
+    return f" {func_name}(" in jimple.split('\n')[0]
+
+def get_func_from_invoke(native_part):
+    # 匹配空格，字符，左括号
+    return re.search(r' ([^\(\)<> {}]+)\(', native_part).group(1)
 
 def convert_source_or_sink(elem):
     return (elem.attrib['Method'], elem.attrib['Statement'])
@@ -266,12 +302,18 @@ def parse_ns_edges_analyzed(dir):
         analyzed.update(analyzed_l)
     return len(analyzed), times
 
+def function_has_edges(jimp):
+    funcs = jimp.split('}')[:-1]
+    total_count = len(funcs)
+    has_edges = []
+    for func in funcs:
+        m, p, c, con = parse_jimple_edges_count(func)
+        if c+con > 0:
+            has_edges.append(func)
+    return total_count, has_edges
 
-# parse successfully created edge in jimple file
-# remove trivial edge.
-def parse_ns_edges(jimp):
+def parse_jimple_edges(jimp):
     import re
-    jimp = read_file(jimp)
     jimp = re.sub(r'public static .* JNI_OnLoad\(.*\)$\n\s*{[^}]*}', "", jimp) # exclude jni_onload
     mths = match_in_str(r'^ *(.*\))\s*{', jimp)
     mths = set([i for i in mths if 'JNI_OnLoad' not in i and '"' not in i])
@@ -283,16 +325,22 @@ def parse_ns_edges(jimp):
     calls = set([i for i in possible_calls if 'specialinvoke' not in i and 'android.util.Log.' not in i])
     # calls = match_in_str(r'^ *((.* = )?([a-zA-Z0-9_.$]*))\(.*\);', jimp)
     # calls = set([i[2] for i in calls if 'NativeSummary' not in i[2] and 'valueOf' not in i[2] and 'toString' not in i[2]])
-    special_calls = match_in_str(r'new (.*);\n\n *specialinvoke .*\.<init>', jimp)
+    special_calls = match_in_str(r'new (.*);\n+ *specialinvoke .*\.<init>', jimp)
     scc = len(special_calls)
     special_calls = set(special_calls)
 
     # todo_set = possible_calls.difference(calls)
-    
+
     assert len(specialinvokes) == scc
 
     # if len(todo_set) > 0:
     #     pass
+    return mths, possible_calls, calls, special_calls
+
+# parse successfully created edge in jimple file
+# remove trivial edge.
+def parse_jimple_edges_count(jimp):
+    mths, possible_calls, calls, special_calls = parse_jimple_edges(jimp)
     return len(mths), len(possible_calls), len(calls), len(special_calls)
 
 

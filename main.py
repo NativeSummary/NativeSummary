@@ -85,7 +85,7 @@ def binary_analysis(*args, log_file=None):
 def java_analysis(*args, log_file=None):
     jar_path = os.path.join(project_root, "native_summary-1.0-SNAPSHOT.jar")
     if log_file:
-        ret = run_and_save_output(["/usr/bin/time", "-v", java_path, "-jar", jar_path]+list(args), log_file)
+        ret = run_and_save_output(["/usr/bin/time", "-v", java_path, "-Xss4m", "-jar", jar_path]+list(args), log_file)
     else:
         ret = run_command(["/usr/bin/time", "-v", java_path, "-Xss4m", "-jar", jar_path]+list(args))
     return ret
