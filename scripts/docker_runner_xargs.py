@@ -2,7 +2,8 @@
 import os
 import sys
 
-IMAGE_NAME = 'ns'
+# IMAGE_NAME = 'ns'
+IMAGE_NAME = 'nativesummary/nativesummary:latest'
 
 def get_ns_docker_command(apk_path: str, result_dir: str, apk_name=None, timeout=None,
                           binary_timeout=None, ss_file=None, max_cpu=None, max_mem=None,
